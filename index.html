@@ -1,281 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandymount: Where Open Collaboration Meets Innovative Technology</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandymount - Open Collaboration Meets Innovative Technology</title>
     <style>
-        /* Color Palette */
-        :root {
-            --deep-purple: #3C1361;
-            --light-purple: #5A189A;
-            --sky-blue: #4FC3F7;
-            --light-blue: #90E0EF;
-            --white: #FFFFFF;
-            --gray: #F3F4F6;
-        }
-
-        /* Global Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--gray);
-            color: var(--deep-purple);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--sky-blue);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--light-blue);
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 0.5em;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1.2em;
-        }
-
-        /* Header Styles */
-        header {
-            background: var(--deep-purple);
-            color: var(--white);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header nav {
-            text-align: center;
-        }
-
-        header nav a {
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(to right, var(--deep-purple), var(--sky-blue));
-            color: var(--white);
-            padding: 100px 20px;
-            text-align: center;
-            border-radius: 0 0 50px 50px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            background-color: var(--white);
-            color: var(--deep-purple);
-            font-weight: bold;
-            border-radius: 25px;
-            border: 2px solid var(--white);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--sky-blue);
-            color: var(--white);
-            border: 2px solid var(--sky-blue);
-        }
-
-        /* Section Styles */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .section img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .three-columns {
-            display: flex;
-            justify-content: space-around;
-            align-items: stretch;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .three-columns div {
-            flex-basis: 30%;
-            padding: 20px;
-            background-color: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .three-columns div:hover {
-            transform: translateY(-10px);
-        }
-
-        .three-columns img {
-            margin-bottom: 15px;
-        }
-
-        /* Footer Styles */
-        footer {
-            background: var(--deep-purple);
-            color: var(--white);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer a {
-            margin: 0 15px;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .three-columns {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .three-columns div {
-                margin-bottom: 30px;
-            }
-        }
+      :root {
+        --soft-lavender: #e6e6fa;
+        --pale-periwinkle: #ccccff;
+        --light-sage: #c1e1c1;
+        --soft-peach: #ffdab9;
+        --muted-coral: #f08080;
+        --deep-blue: #4682b4;
+        --white: #ffffff;
+        --deep-purple: #483d8b;
+        --sky-blue: #87ceeb;
+        --soft-white: #f5f5f5; /* New color */
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--soft-white),
+          var(--soft-lavender),
+          var(--pale-periwinkle)
+        );
+        color: var(--deep-purple);
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+        padding: 50px 0;
+      }
+      h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: var(--deep-purple);
+      }
+      .tagline {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: var(--deep-purple);
+        color: var(--white);
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .cta-button:hover {
+        background-color: var(--sky-blue);
+        color: var(--deep-blue);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      section {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: var(--deep-purple);
+        border-bottom: 2px solid var(--sky-blue);
+        padding-bottom: 10px;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      li::before {
+        content: '• ';
+        color: var(--sky-blue);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .feature-item {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: var(--deep-purple);
+        color: var(--white);
+        margin-top: 50px;
+      }
     </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#involved">Get Involved</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sandymount</h1>
+        <p class="tagline">
+          Where Open Collaboration Meets Innovative Technology
+        </p>
+        <a href="#get-involved" class="cta-button">Join the Revolution</a>
+      </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Introducing Sandymount</h1>
-        <p>Where Open Collaboration Meets Innovative Technology</p>
-        <a href="#about" class="btn">Learn More</a>
-    </section>
-
-    <!-- What is Sandymount -->
-    <section id="about" class="container section">
+      <section>
         <h2>What is Sandymount?</h2>
-        <p>Sandymount is a visionary project that brings humans and intelligent systems together in a harmonious environment...</p>
-        <img src="https://via.placeholder.com/300" alt="Sandymount Illustration">
-    </section>
+        <p>
+          Sandymount is a visionary project that brings humans and intelligent
+          systems together in a harmonious environment. By fusing strengths from
+          open platforms like <strong>Solid Project</strong>,
+          <strong>Ditto</strong>, <strong>ActivityPub</strong>,
+          <strong>Nostr</strong>, and more, we're crafting a unified ecosystem
+          where innovation and creativity flourish.
+        </p>
+      </section>
 
-    <!-- Why Sandymount (Three Columns) -->
-    <section class="container section">
+      <section>
         <h2>Why Sandymount?</h2>
-        <div class="three-columns">
-            <div>
-                <img src="https://via.placeholder.com/150" alt="Unified Open Systems">
-                <h3>Unified Open Systems</h3>
-                <p>We integrate cutting-edge open technologies to create a seamless, interconnected experience for all users.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/150" alt="Bridging Humans and Technology">
-                <h3>Bridging Humans and Technology</h3>
-                <p>Enabling effortless collaboration between people and intelligent agents.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/150" alt="Safe and Supportive Innovation">
-                <h3>Safe and Supportive Innovation</h3>
-                <p>Committed to responsible development, promoting safety and security.</p>
-            </div>
-        </div>
-    </section>
+        <ul>
+          <li>
+            <strong>Unified Open Systems:</strong> We integrate cutting-edge
+            open technologies to create a seamless, interconnected experience
+            for all users.
+          </li>
+          <li>
+            <strong>Bridging Humans and Technology:</strong> Sandymount develops
+            evolving specifications and protocols that serve as bridges,
+            enabling effortless collaboration between people and intelligent
+            agents.
+          </li>
+          <li>
+            <strong>Enhanced Collaboration:</strong> In our ecosystem, humans
+            guide and inspire while advanced systems support and amplify our
+            capabilities, fostering a new level of productivity.
+          </li>
+          <li>
+            <strong>Safe and Supportive Innovation:</strong> We're committed to
+            responsible development, ensuring that technology serves humanity's
+            best interests while promoting safety and security.
+          </li>
+        </ul>
+      </section>
 
-    <!-- Key Features -->
-    <section id="features" class="container section">
+      <section>
         <h2>Key Features</h2>
-        <div class="three-columns">
-            <div>
-                <img src="https://via.placeholder.com/150" alt="Intelligent Collaboration">
-                <h3>Intelligent Collaboration</h3>
-                <p>Interactions are enriched through smart support, making teamwork more intuitive and efficient.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/150" alt="Adaptive Learning Systems">
-                <h3>Adaptive Learning Systems</h3>
-                <p>Our technology evolves with you, providing a more personalized and effective experience over time.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/150" alt="Unified Social Platforms and Apps">
-                <h3>Unified Social Platforms and Apps</h3>
-                <p>Enjoy a cohesive network of social interactions and applications.</p>
-            </div>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Intelligent Collaboration</h3>
+            <p>
+              Experience a platform where interactions are enriched through
+              smart support, making teamwork more intuitive and efficient.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Adaptive Learning Systems</h3>
+            <p>
+              Our technology evolves with you, remembering past interactions to
+              provide a more personalized and effective experience over time.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Unified Social Platforms and Apps</h3>
+            <p>
+              Enjoy a cohesive network of social interactions and applications,
+              interconnected to offer a richer and more engaging user
+              experience.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Evolving Specifications</h3>
+            <p>
+              Stay ahead with protocols that adapt and grow, ensuring seamless
+              integration with future technologies and standards.
+            </p>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Get Involved -->
-    <section id="involved" class="container section">
+      <section id="get-involved">
         <h2>Get Involved</h2>
-        <p>Whether you're a developer, innovator, or technology enthusiast, there's a place for you in the Sandymount community.</p>
-        <div class="three-columns">
-            <div>
-                <img src="https://via.placeholder.com/150" alt="For Developers">
-                <h3>For Developers</h3>
-                <p>Contribute to our open-source repositories and help build the backbone of Sandymount.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/150" alt="For Enthusiasts">
-                <h3>For Enthusiasts</h3>
-                <p>Join the community and spread the word. Help us grow by sharing Sandymount with your network.</p>
-            </div>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>For Developers and Innovators</h3>
+            <ul>
+              <li>
+                Contribute Code: Help build the backbone of Sandymount by
+                contributing to our open-source repositories.
+              </li>
+              <li>
+                Propose Ideas: Your innovative concepts can shape the future of
+                collaborative technology.
+              </li>
+            </ul>
+          </div>
+          <div class="feature-item">
+            <h3>For Enthusiasts and Visionaries</h3>
+            <ul>
+              <li>
+                Join the Community: Engage with others who share your passion
+                for technology and collaboration.
+              </li>
+              <li>
+                Spread the Word: Help us grow by sharing Sandymount with your
+                network.
+              </li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Sandymount: Where open collaboration meets innovative technology</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#involved">Get Involved</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </footer>
-</body>
+      <section>
+        <h2>The Future is Collaborative</h2>
+        <p>
+          Imagine a world where technology doesn't just serve us but works
+          <strong>with</strong> us—a world where human creativity and
+          technological innovation come together to create something truly
+          extraordinary.
+        </p>
+        <p><strong>That's the world Sandymount is building.</strong></p>
+      </section>
+
+      <footer>
+        <p>
+          Sandymount: Where open collaboration meets innovative technology,
+          uniting humans and intelligent systems to build in harmony.
+        </p>
+        <a href="#get-involved" class="cta-button">Join Us Today</a>
+      </footer>
+    </div>
+  </body>
 </html>
