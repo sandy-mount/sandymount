@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandymount - Open Collaboration Meets Innovative Technology</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --soft-lavender: #e6e6fa;
@@ -15,21 +25,30 @@
         --white: #ffffff;
         --deep-purple: #483d8b;
         --sky-blue: #87ceeb;
-        --soft-white: #f5f5f5; /* New color */
+        --soft-white: #f5f5f5;
+        --text-dark: #2d2d40;
+        --text-secondary: #5a5a72;
+        --border-light: #e1e1e8;
+        --highlight: #6c5ce7;
+        --highlight-light: #a29bfe;
       }
       body,
       html {
         margin: 0;
         padding: 0;
-        font-family: 'Arial', sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
         background: linear-gradient(
           135deg,
           var(--soft-white),
           var(--soft-lavender),
           var(--pale-periwinkle)
         );
-        color: var(--deep-purple);
-        line-height: 1.6;
+        background-attachment: fixed;
+        color: var(--text-dark);
+        line-height: 1.7;
+        font-size: 16px;
       }
       .container {
         max-width: 1200px;
@@ -38,82 +57,228 @@
       }
       header {
         text-align: center;
-        padding: 50px 0;
+        padding: 60px 0 70px;
+        margin-bottom: 20px;
       }
       h1 {
-        font-size: 3.5em;
+        font-size: 4rem;
+        font-weight: 700;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        color: var(--deep-purple);
+        background: linear-gradient(
+          45deg,
+          var(--deep-purple),
+          var(--highlight)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: none;
+        letter-spacing: -1px;
       }
       .tagline {
-        font-size: 1.5em;
-        margin-bottom: 30px;
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        color: var(--text-secondary);
+        font-weight: 300;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
       }
       .cta-button {
         display: inline-block;
-        padding: 15px 30px;
+        padding: 14px 28px;
         background-color: var(--deep-purple);
         color: var(--white);
         text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
+        font-weight: 600;
+        border-radius: 4px;
         transition: all 0.3s ease;
+        border: none;
+        font-size: 1rem;
+        box-shadow: 0 4px 12px rgba(72, 61, 139, 0.2);
       }
       .cta-button:hover {
-        background-color: var(--sky-blue);
-        color: var(--deep-blue);
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: var(--highlight);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(72, 61, 139, 0.3);
       }
-      section {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 10px;
-        padding: 30px;
+      section,
+      .manifesto-section {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        padding: 35px;
         margin-bottom: 30px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.7);
       }
       h2 {
         color: var(--deep-purple);
-        border-bottom: 2px solid var(--sky-blue);
-        padding-bottom: 10px;
+        border-bottom: 2px solid var(--border-light);
+        padding-bottom: 15px;
+        margin-top: 0;
+        font-weight: 700;
+        font-size: 1.9rem;
       }
       ul {
         list-style-type: none;
         padding-left: 0;
       }
       li {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 1.5em;
       }
       li::before {
-        content: '• ';
-        color: var(--sky-blue);
+        content: '•';
+        color: var(--highlight);
         font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
+        position: absolute;
+        left: 0;
       }
       .feature-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
       }
       .feature-item {
-        background-color: rgba(255, 255, 255, 0.7);
-        padding: 20px;
-        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 25px;
+        border-radius: 8px;
         transition: all 0.3s ease;
+        border: 1px solid var(--border-light);
       }
       .feature-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+      .feature-item h3 {
+        margin-top: 0;
+        color: var(--deep-purple);
+        font-size: 1.3rem;
+      }
+      a {
+        color: var(--highlight);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      a:hover {
+        color: var(--deep-purple);
+        text-decoration: underline;
       }
       footer {
         text-align: center;
-        padding: 20px;
+        padding: 40px 20px;
         background-color: var(--deep-purple);
         color: var(--white);
         margin-top: 50px;
+        border-radius: 8px;
+      }
+      code {
+        font-family: 'Source Code Pro', monospace;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      /* Manifesto section styles */
+      .manifesto-section {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 40px 35px;
+        position: relative;
+      }
+      .manifesto-section h2 {
+        text-align: center;
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .manifesto-intro {
+        font-style: normal;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+        border-bottom: 1px solid var(--border-light);
+        padding-bottom: 25px;
+      }
+      .principle {
+        margin-bottom: 45px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid var(--border-light);
+        position: relative;
+      }
+      .principle:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .principle h3 {
+        color: var(--deep-purple);
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+      .principle-quote {
+        font-style: italic;
+        margin-top: 20px;
+        padding: 15px 25px;
+        background-color: rgba(108, 92, 231, 0.06);
+        border-left: 4px solid var(--highlight);
+        font-size: 1.1rem;
+        border-radius: 0 4px 4px 0;
+      }
+      .emoji-icon {
+        margin-right: 12px;
+        font-size: 1.2em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(
+          135deg,
+          var(--highlight-light),
+          var(--highlight)
+        );
+        border-radius: 50%;
+        color: white;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        body,
+        html {
+          font-size: 15px;
+        }
+        .container {
+          padding: 15px;
+        }
+        header {
+          padding: 40px 0 50px;
+        }
+        h1 {
+          font-size: 3rem;
+        }
+        section,
+        .manifesto-section {
+          padding: 25px;
+        }
+        .feature-grid {
+          gap: 15px;
+        }
+        .principle h3 {
+          font-size: 1.4rem;
+        }
       }
     </style>
   </head>
@@ -121,17 +286,144 @@
     <div class="container">
       <header>
         <h1>Sandymount</h1>
-        <p class="tagline">
-          Where Open Collaboration Meets Innovative Technology
-        </p>
-        <a
+        <p class="tagline">Empowering Humans Through Open, Trustworthy Agents</p>
+        <!-- <a
           href="https://github.com/sandy-mount/sandymount/"
           target="_blank"
           rel="noopener noreferrer"
           class="cta-button"
-          >Join the Revolution</a
-        >
+          >Join the Movement</a
+        > -->
       </header>
+
+
+      <div class="manifesto-section">
+        <h2>🕊️ Agentic Principles Manifesto</h2>
+        <p class="manifesto-intro">
+          A call for autonomy, dignity, and trust in the age of intelligent
+          agents.
+        </p>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">🛡️</span>1. Agents Must Serve the User
+            First
+          </h3>
+          <p>
+            Agents are extensions of human will—not proxies for corporations.
+            They must act <em>in the user's interest</em>, not in the interest
+            of advertisers, platforms, or centralized authorities.
+          </p>
+          <p class="principle-quote">
+            Your agent is <strong>your agent</strong>—not someone else's
+            product.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">🔐</span>2. Identity and Intent Must Be
+            Verifiable
+          </h3>
+          <p>
+            Agents must use cryptographically verifiable identity (e.g.,
+            <code>did:nostr</code>, WebID, or other decentralized IDs). All
+            actions and intentions must be transparently attributable.
+          </p>
+          <p class="principle-quote">
+            No ghost agents. No hidden motives. No black boxes.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">🔒</span>3. Data Sovereignty Is
+            Non-Negotiable
+          </h3>
+          <p>
+            Agents must respect user-owned data. They must store and access
+            information according to <strong>user-defined permissions</strong>,
+            preferably using self-hosted or interoperable protocols like Solid
+            or Nosdav.
+          </p>
+          <p class="principle-quote">
+            What the agent knows <em>about you</em> must remain <em>yours</em>.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">🌐</span>4. Open Protocols, Not Walled
+            Gardens
+          </h3>
+          <p>
+            Agents should speak open languages—Nostr, ActivityPub, HTTP, RDF,
+            Bitcoin—not proprietary APIs that lock users in. Interoperability is
+            a right, not a feature.
+          </p>
+          <p class="principle-quote">Let agents roam. Let users choose.</p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">💻</span>5. Local-First, Cloud-Optional
+          </h3>
+          <p>
+            Agents should default to local operation. Cloud support must be
+            modular, auditable, and replaceable.
+          </p>
+          <p class="principle-quote">
+            Agents should run <em>on your machine</em> unless <em>you</em> say
+            otherwise.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">🔍</span>6. Transparent Logic, Tunable
+            Behavior
+          </h3>
+          <p>
+            Users must be able to inspect, adjust, and fork their agents' logic.
+            Agents should support interpretable rule sets and modifiable
+            preferences, not opaque neural nets alone.
+          </p>
+          <p class="principle-quote">
+            You deserve to understand why your agent acts—and change it when
+            needed.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">♻️</span>7. Sustainable Ecosystems Over
+            Extraction
+          </h3>
+          <p>
+            Agentic systems should reward contributors, not extract value
+            unfairly. Cryptoeconomic primitives like Bitcoin can enable fair
+            incentives—without surveillance capitalism.
+          </p>
+          <p class="principle-quote">
+            Build systems that <strong>pay it forward</strong>, not lock it
+            down.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>
+            <span class="emoji-icon">👥</span>8. Community-Driven Standards and
+            Governance
+          </h3>
+          <p>
+            Agent behavior, safety, and alignment standards must be open,
+            auditable, and shaped by users—not dictated top-down.
+          </p>
+          <p class="principle-quote">
+            The age of agents must be a commons—not an empire.
+          </p>
+        </div>
+      </div>
 
       <section>
         <h2>What is Sandymount?</h2>
@@ -188,6 +480,7 @@
         </p>
       </section>
 
+
       <section>
         <h2>Why Sandymount?</h2>
         <ul>
@@ -195,6 +488,11 @@
             <strong>Unified Open Systems:</strong> We integrate cutting-edge
             open technologies to create a seamless, interconnected experience
             for all users.
+          </li>
+          <li>
+            <strong>User-First Approach:</strong> Our agents serve the user's
+            interests first and foremost, respecting privacy, data ownership,
+            and individual autonomy.
           </li>
           <li>
             <strong>Bridging Humans and Technology:</strong> Sandymount develops
@@ -215,41 +513,6 @@
         </ul>
       </section>
 
-      <section>
-        <h2>Key Features</h2>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <h3>Intelligent Collaboration</h3>
-            <p>
-              Experience a platform where interactions are enriched through
-              smart support, making teamwork more intuitive and efficient.
-            </p>
-          </div>
-          <div class="feature-item">
-            <h3>Adaptive Learning Systems</h3>
-            <p>
-              Our technology evolves with you, remembering past interactions to
-              provide a more personalized and effective experience over time.
-            </p>
-          </div>
-          <div class="feature-item">
-            <h3>Unified Social Platforms and Apps</h3>
-            <p>
-              Enjoy a cohesive network of social interactions and applications,
-              interconnected to offer a richer and more engaging user
-              experience.
-            </p>
-          </div>
-          <div class="feature-item">
-            <h3>Evolving Specifications</h3>
-            <p>
-              Stay ahead with protocols that adapt and grow, ensuring seamless
-              integration with future technologies and standards.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section id="get-involved">
         <h2>Get Involved</h2>
         <div class="feature-grid">
@@ -264,6 +527,11 @@
                 Propose Ideas: Your innovative concepts can shape the future of
                 collaborative technology.
               </li>
+              <li>
+                Help Define Standards: Join us in creating open,
+                community-driven standards for ethical agent behavior and
+                interoperability.
+              </li>
             </ul>
           </div>
           <div class="feature-item">
@@ -277,6 +545,10 @@
                 Spread the Word: Help us grow by sharing Sandymount with your
                 network.
               </li>
+              <li>
+                Test and Provide Feedback: Your experiences help us refine our
+                approach and build better systems for everyone.
+              </li>
             </ul>
           </div>
         </div>
@@ -289,6 +561,11 @@
           <strong>with</strong> us—a world where human creativity and
           technological innovation come together to create something truly
           extraordinary.
+        </p>
+        <p>
+          A world where your data remains <em>yours</em>, where agents operate
+          transparently and ethically, and where open protocols enable
+          unprecedented collaboration and creativity.
         </p>
         <p><strong>That's the world Sandymount is building.</strong></p>
       </section>
