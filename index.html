@@ -1,598 +1,1118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sandymount - Open Collaboration Meets Innovative Technology</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Code+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --soft-lavender: #e6e6fa;
-        --pale-periwinkle: #ccccff;
-        --light-sage: #c1e1c1;
-        --soft-peach: #ffdab9;
-        --muted-coral: #f08080;
-        --deep-blue: #4682b4;
-        --white: #ffffff;
-        --deep-purple: #483d8b;
-        --sky-blue: #87ceeb;
-        --soft-white: #f5f5f5;
-        --text-dark: #2d2d40;
-        --text-secondary: #5a5a72;
-        --border-light: #e1e1e8;
-        --highlight: #6c5ce7;
-        --highlight-light: #a29bfe;
-      }
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-          sans-serif;
-        background: linear-gradient(
-          135deg,
-          var(--soft-white),
-          var(--soft-lavender),
-          var(--pale-periwinkle)
-        );
-        background-attachment: fixed;
-        color: var(--text-dark);
-        line-height: 1.7;
-        font-size: 16px;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      header {
-        text-align: center;
-        padding: 60px 0 70px;
-        margin-bottom: 20px;
-      }
-      h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        background: linear-gradient(
-          45deg,
-          var(--deep-purple),
-          var(--highlight)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-shadow: none;
-        letter-spacing: -1px;
-      }
-      .tagline {
-        font-size: 1.5rem;
-        margin-bottom: 40px;
-        color: var(--text-secondary);
-        font-weight: 300;
-        max-width: 640px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .cta-button {
-        display: inline-block;
-        padding: 14px 28px;
-        background-color: var(--deep-purple);
-        color: var(--white);
-        text-decoration: none;
-        font-weight: 600;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        border: none;
-        font-size: 1rem;
-        box-shadow: 0 4px 12px rgba(72, 61, 139, 0.2);
-      }
-      .cta-button:hover {
-        background-color: var(--highlight);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(72, 61, 139, 0.3);
-      }
-      section,
-      .manifesto-section {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 8px;
-        padding: 35px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.7);
-      }
-      h2 {
-        color: var(--deep-purple);
-        border-bottom: 2px solid var(--border-light);
-        padding-bottom: 15px;
-        margin-top: 0;
-        font-weight: 700;
-        font-size: 1.9rem;
-      }
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
-      li {
-        margin-bottom: 15px;
-        position: relative;
-        padding-left: 1.5em;
-      }
-      li::before {
-        content: '•';
-        color: var(--highlight);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-      }
-      .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-      }
-      .feature-item {
-        background-color: rgba(255, 255, 255, 0.6);
-        padding: 25px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        border: 1px solid var(--border-light);
-      }
-      .feature-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-      .feature-item h3 {
-        margin-top: 0;
-        color: var(--deep-purple);
-        font-size: 1.3rem;
-      }
-      a {
-        color: var(--highlight);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-      a:hover {
-        color: var(--deep-purple);
-        text-decoration: underline;
-      }
-      footer {
-        text-align: center;
-        padding: 40px 20px;
-        background-color: var(--deep-purple);
-        color: var(--white);
-        margin-top: 50px;
-        border-radius: 8px;
-      }
-      code {
-        font-family: 'Source Code Pro', monospace;
-        background: rgba(0, 0, 0, 0.05);
-        padding: 2px 5px;
-        border-radius: 3px;
-        font-size: 0.9em;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandymount - The Open, Agentic, Decentralized Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a24;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-orange: #f97316;
+      --accent-green: #22c55e;
+      --accent-pink: #ec4899;
+      --accent-yellow: #eab308;
+      --accent-glow: rgba(139, 92, 246, 0.3);
+      --border: #27272a;
+      --gradient: linear-gradient(135deg, #8b5cf6, #06b6d4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; transition: all 0.2s; }
+    a:hover { color: var(--accent-cyan); }
 
-      /* Manifesto section styles */
-      .manifesto-section {
-        background-color: rgba(255, 255, 255, 0.85);
-        padding: 40px 35px;
-        position: relative;
-      }
-      .manifesto-section h2 {
-        text-align: center;
-        font-size: 2.4rem;
-        margin-bottom: 25px;
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-      .manifesto-intro {
-        font-style: normal;
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 1.25rem;
-        color: var(--text-secondary);
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-        border-bottom: 1px solid var(--border-light);
-        padding-bottom: 25px;
-      }
-      .principle {
-        margin-bottom: 45px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid var(--border-light);
-        position: relative;
-      }
-      .principle:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      .principle h3 {
-        color: var(--deep-purple);
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-      }
-      .principle-quote {
-        font-style: italic;
-        margin-top: 20px;
-        padding: 15px 25px;
-        background-color: rgba(108, 92, 231, 0.06);
-        border-left: 4px solid var(--highlight);
-        font-size: 1.1rem;
-        border-radius: 0 4px 4px 0;
-      }
-      .emoji-icon {
-        margin-right: 12px;
-        font-size: 1.2em;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(
-          135deg,
-          var(--highlight-light),
-          var(--highlight)
-        );
-        border-radius: 50%;
-        color: white;
-      }
+    /* Animated background */
+    .bg-grid {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .bg-glow {
+      position: fixed;
+      width: 800px; height: 800px;
+      border-radius: 50%;
+      filter: blur(180px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .bg-glow-1 { top: -300px; left: -200px; background: var(--accent); }
+    .bg-glow-2 { bottom: -300px; right: -200px; background: var(--accent-cyan); }
+    .bg-glow-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--accent-orange); opacity: 0.05; }
 
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        body,
-        html {
-          font-size: 15px;
-        }
-        .container {
-          padding: 15px;
-        }
-        header {
-          padding: 40px 0 50px;
-        }
-        h1 {
-          font-size: 3rem;
-        }
-        section,
-        .manifesto-section {
-          padding: 25px;
-        }
-        .feature-grid {
-          gap: 15px;
-        }
-        .principle h3 {
-          font-size: 1.4rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>Sandymount</h1>
-        <p class="tagline">Empowering Humans Through Open, Trustworthy Agents</p>
-        <!-- <a
-          href="https://github.com/sandy-mount/sandymount/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cta-button"
-          >Join the Movement</a
-        > -->
-      </header>
+    /* Navigation */
+    .nav {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+    }
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--text); }
+    @media (max-width: 768px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.85rem; }
+    }
 
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.6rem 1.25rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 40%, #06b6d4 80%, #22c55e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font-weight: 300;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 0.9rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 50px var(--accent-glow);
+      color: white;
+    }
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent);
+      color: var(--text);
+    }
 
-      <div class="manifesto-section">
-        <h2>🕊️ Agentic Principles Manifesto</h2>
-        <p class="manifesto-intro">
-          A call for autonomy, dignity, and trust in the age of intelligent
-          agents.
-        </p>
+    /* Section styling */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      display: inline-block;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      padding: 0.35rem 0.9rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">🛡️</span>1. Agents Must Serve the User
-            First
-          </h3>
-          <p>
-            Agents are extensions of human will—not proxies for corporations.
-            They must act <em>in the user's interest</em>, not in the interest
-            of advertisers, platforms, or centralized authorities.
-          </p>
-          <p class="principle-quote">
-            Your agent is <strong>your agent</strong>—not someone else's
-            product.
-          </p>
-        </div>
+    /* SAND Stack */
+    .sand-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .sand-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .sand-grid { grid-template-columns: 1fr; }
+    }
+    .sand-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .sand-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .sand-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .sand-card:hover::before { opacity: 1; }
+    .sand-card .letter {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--card-accent), var(--card-accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .sand-card h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+    .sand-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .sand-card .link { font-size: 0.85rem; }
+    .sand-s { --card-accent: #8b5cf6; --card-accent-2: #a78bfa; }
+    .sand-a { --card-accent: #06b6d4; --card-accent-2: #22d3ee; }
+    .sand-n { --card-accent: #f97316; --card-accent-2: #fb923c; }
+    .sand-d { --card-accent: #22c55e; --card-accent-2: #4ade80; }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">🔐</span>2. Identity and Intent Must Be
-            Verifiable
-          </h3>
-          <p>
-            Agents must use cryptographically verifiable identity (e.g.,
-            <code>did:nostr</code>, WebID, or other decentralized IDs). All
-            actions and intentions must be transparently attributable.
-          </p>
-          <p class="principle-quote">
-            No ghost agents. No hidden motives. No black boxes.
-          </p>
-        </div>
+    /* Project Categories */
+    .category {
+      margin-bottom: 4rem;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .category-icon {
+      width: 48px; height: 48px;
+      background: rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .category-header h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .category-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">🔒</span>3. Data Sovereignty Is
-            Non-Negotiable
-          </h3>
-          <p>
-            Agents must respect user-owned data. They must store and access
-            information according to <strong>user-defined permissions</strong>,
-            preferably using self-hosted or interoperable protocols like Solid
-            or Nosdav.
-          </p>
-          <p class="principle-quote">
-            What the agent knows <em>about you</em> must remain <em>yours</em>.
-          </p>
-        </div>
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .project-icon {
+      width: 44px; height: 44px;
+      background: rgba(139, 92, 246, 0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .project-icon.green { background: rgba(34, 197, 94, 0.12); }
+    .project-icon.cyan { background: rgba(6, 182, 212, 0.12); }
+    .project-icon.orange { background: rgba(249, 115, 22, 0.12); }
+    .project-icon.pink { background: rgba(236, 72, 153, 0.12); }
+    .project-icon.yellow { background: rgba(234, 179, 8, 0.12); }
+    .project-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    .project-info .status {
+      font-size: 0.75rem;
+      color: var(--accent-green);
+      background: rgba(34, 197, 94, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .project-info .status.wip {
+      color: var(--accent-orange);
+      background: rgba(249, 115, 22, 0.1);
+    }
+    .project-card > p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .project-links a {
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .project-links a:hover { color: var(--accent); }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">🌐</span>4. Open Protocols, Not Walled
-            Gardens
-          </h3>
-          <p>
-            Agents should speak open languages—Nostr, ActivityPub, HTTP, RDF,
-            Bitcoin—not proprietary APIs that lock users in. Interoperability is
-            a right, not a feature.
-          </p>
-          <p class="principle-quote">Let agents roam. Let users choose.</p>
-        </div>
+    /* Architecture Diagram */
+    .arch-section {
+      background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.03), transparent);
+      padding: 5rem 2rem;
+    }
+    .arch-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .arch-diagram {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-top: 2rem;
+    }
+    .arch-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .arch-layer {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .arch-label {
+      width: 120px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .arch-boxes {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .arch-box {
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .arch-box:hover {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: var(--accent);
+    }
+    .arch-box.cyan { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.2); }
+    .arch-box.cyan:hover { background: rgba(6, 182, 212, 0.2); border-color: var(--accent-cyan); }
+    .arch-box.orange { background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.2); }
+    .arch-box.orange:hover { background: rgba(249, 115, 22, 0.2); border-color: var(--accent-orange); }
+    .arch-box.green { background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.2); }
+    .arch-box.green:hover { background: rgba(34, 197, 94, 0.2); border-color: var(--accent-green); }
+    @media (max-width: 700px) {
+      .arch-layer { flex-direction: column; align-items: flex-start; }
+      .arch-label { width: auto; text-align: left; }
+    }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">💻</span>5. Local-First, Cloud-Optional
-          </h3>
-          <p>
-            Agents should default to local operation. Cloud support must be
-            modular, auditable, and replaceable.
-          </p>
-          <p class="principle-quote">
-            Agents should run <em>on your machine</em> unless <em>you</em> say
-            otherwise.
-          </p>
-        </div>
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    @media (max-width: 800px) {
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .stat-item .number {
+      font-size: 2.75rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .stat-item .label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">🔍</span>6. Transparent Logic, Tunable
-            Behavior
-          </h3>
-          <p>
-            Users must be able to inspect, adjust, and fork their agents' logic.
-            Agents should support interpretable rule sets and modifiable
-            preferences, not opaque neural nets alone.
-          </p>
-          <p class="principle-quote">
-            You deserve to understand why your agent acts—and change it when
-            needed.
-          </p>
-        </div>
+    /* Principles Link */
+    .principles-section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .principles-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 20px;
+      padding: 3.5rem;
+    }
+    .principles-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .principles-card p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    .principles-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) {
+      .principles-list { grid-template-columns: 1fr; }
+    }
+    .principles-list span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+    }
+    .principles-list span::before {
+      content: '→ ';
+      color: var(--accent);
+    }
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">♻️</span>7. Sustainable Ecosystems Over
-            Extraction
-          </h3>
-          <p>
-            Agentic systems should reward contributors, not extract value
-            unfairly. Cryptoeconomic primitives like Bitcoin can enable fair
-            incentives—without surveillance capitalism.
-          </p>
-          <p class="principle-quote">
-            Build systems that <strong>pay it forward</strong>, not lock it
-            down.
-          </p>
-        </div>
+    /* Footer */
+    .footer {
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid var(--border);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .footer-brand p {
+      color: var(--text-muted);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--text-muted);
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
 
-        <div class="principle">
-          <h3>
-            <span class="emoji-icon">👥</span>8. Community-Driven Standards and
-            Governance
-          </h3>
-          <p>
-            Agent behavior, safety, and alignment standards must be open,
-            auditable, and shaped by users—not dictated top-down.
-          </p>
-          <p class="principle-quote">
-            The age of agents must be a commons—not an empire.
-          </p>
+  <nav class="nav">
+    <a href="./" class="nav-logo">Sandymount</a>
+    <div class="nav-links">
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#architecture">Architecture</a>
+      <a href="./manifesto.html">Manifesto</a>
+      <a href="https://github.com/sandy-mount">GitHub</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-badge">One Modular Ecosystem • Infinite Possibilities</div>
+    <h1>The Open, Agentic, Decentralized Web</h1>
+    <p class="hero-subtitle">Where data sovereignty meets intelligent agents.</p>
+    <p class="hero-desc">Sandymount unites 20+ projects across Solid, ActivityPub, Nostr, and beyond—forming one powerful, modular system where users own their data and agents serve their interests.</p>
+    <div class="hero-buttons">
+      <a href="https://solid-lite.org" class="btn btn-primary">Get Started</a>
+      <a href="#projects" class="btn btn-secondary">Explore Projects</a>
+      <a href="./manifesto.html" class="btn btn-secondary">Read Manifesto</a>
+    </div>
+  </header>
+
+  <!-- SAND Stack -->
+  <section id="stack" class="section">
+    <div class="section-header">
+      <div class="section-tag">Foundation</div>
+      <h2>The SAND Stack</h2>
+      <p>Four pillars of the open, decentralized web—working together as one.</p>
+    </div>
+    <div class="sand-grid">
+      <div class="sand-card sand-s">
+        <div class="letter">S</div>
+        <h3>Solid</h3>
+        <p>Decoupled data & apps. Store in pods you control. Apps read with permission.</p>
+        <a href="https://solidproject.org" class="link">solidproject.org →</a>
+      </div>
+      <div class="sand-card sand-a">
+        <div class="letter">A</div>
+        <h3>ActivityPub</h3>
+        <p>Federated social. Follow anyone, post anywhere. Your network, your rules.</p>
+        <a href="https://activitypub.rocks" class="link">activitypub.rocks →</a>
+      </div>
+      <div class="sand-card sand-n">
+        <div class="letter">N</div>
+        <h3>Nostr</h3>
+        <p>Censorship-resistant messaging. Cryptographic identity. Relay-based distribution.</p>
+        <a href="https://nostr.com" class="link">nostr.com →</a>
+      </div>
+      <div class="sand-card sand-d">
+        <div class="letter">D</div>
+        <h3>Ditto</h3>
+        <p>Cross-protocol bridge. Connect Nostr to ActivityPub. One identity everywhere.</p>
+        <a href="https://soapbox.pub/ditto/" class="link">soapbox.pub/ditto →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <div class="section-tag">Ecosystem</div>
+      <h2>The Projects</h2>
+      <p>Servers, specs, tools, and bridges—all working together.</p>
+    </div>
+
+    <!-- Solid & LDP -->
+    <div class="category">
+      <div class="category-header">
+        <div class="category-icon">📦</div>
+        <div>
+          <h3>Solid & Linked Data Platform</h3>
+          <p>Servers, specifications, and tools for decentralized data storage</p>
         </div>
       </div>
-
-      <section>
-        <h2>What is Sandymount?</h2>
-        <p>
-          <strong
-            >Sandymount brings humans and intelligent systems together in a
-            harmonious environment</strong
-          >. By fusing strengths from open platforms we're crafting a unified
-          ecosystem where innovation and creativity flourish.
-        </p>
-        <p>At the core of Sandymount is the SAND stack:</p>
-        <ul>
-          <li>
-            <a
-              href="https://solidproject.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><strong>S</strong>olid</a
-            >
-            : for decentralized data storage and user control
-          </li>
-          <li>
-            <a
-              href="https://activitypub.rocks/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><strong>A</strong>ctivityPub</a
-            >
-            : enabling federated social networking
-          </li>
-          <li>
-            <a
-              href="https://nostr.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><strong>N</strong>ostr</a
-            >
-            : providing a resilient relay system
-          </li>
-          <li>
-            <a
-              href="https://soapbox.pub/ditto/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><strong>D</strong>itto</a
-            >
-            : combining a world class user interface with scalable backend and
-            bridges
-          </li>
-        </ul>
-        <p>
-          This powerful combination forms the foundation of our open,
-          collaborative ecosystem.
-        </p>
-      </section>
-
-
-      <section>
-        <h2>Why Sandymount?</h2>
-        <ul>
-          <li>
-            <strong>Unified Open Systems:</strong> We integrate cutting-edge
-            open technologies to create a seamless, interconnected experience
-            for all users.
-          </li>
-          <li>
-            <strong>User-First Approach:</strong> Our agents serve the user's
-            interests first and foremost, respecting privacy, data ownership,
-            and individual autonomy.
-          </li>
-          <li>
-            <strong>Bridging Humans and Technology:</strong> Sandymount develops
-            evolving specifications and protocols that serve as bridges,
-            enabling effortless collaboration between people and intelligent
-            agents.
-          </li>
-          <li>
-            <strong>Enhanced Collaboration:</strong> In our ecosystem, humans
-            guide and inspire while advanced systems support and amplify our
-            capabilities, fostering a new level of productivity.
-          </li>
-          <li>
-            <strong>Safe and Supportive Innovation:</strong> We're committed to
-            responsible development, ensuring that technology serves humanity's
-            best interests while promoting safety and security.
-          </li>
-        </ul>
-      </section>
-
-      <section id="get-involved">
-        <h2>Get Involved</h2>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <h3>For Developers and Innovators</h3>
-            <ul>
-              <li>
-                Contribute Code: Help build the backbone of Sandymount by
-                contributing to our open-source repositories.
-              </li>
-              <li>
-                Propose Ideas: Your innovative concepts can shape the future of
-                collaborative technology.
-              </li>
-              <li>
-                Help Define Standards: Join us in creating open,
-                community-driven standards for ethical agent behavior and
-                interoperability.
-              </li>
-            </ul>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon">📦</div>
+            <div class="project-info">
+              <h4>JavaScript Solid Server (JSS)</h4>
+              <span class="status">Live</span>
+            </div>
           </div>
-          <div class="feature-item">
-            <h3>For Enthusiasts and Visionaries</h3>
-            <ul>
-              <li>
-                Join the Community: Engage with others who share your passion
-                for technology and collaboration.
-              </li>
-              <li>
-                Spread the Word: Help us grow by sharing Sandymount with your
-                network.
-              </li>
-              <li>
-                Test and Provide Feedback: Your experiences help us refine our
-                approach and build better systems for everyone.
-              </li>
-            </ul>
+          <p>Lightweight, modular Solid server. 90%+ CTH conformance. Single binary. Built-in IDP. Production ready.</p>
+          <div class="project-links">
+            <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer">→ GitHub</a>
+            <a href="https://www.npmjs.com/package/jss">→ npm</a>
           </div>
         </div>
-      </section>
-
-      <section>
-        <h2>The Future is Collaborative</h2>
-        <p>
-          Imagine a world where technology doesn't just serve us but works
-          <strong>with</strong> us—a world where human creativity and
-          technological innovation come together to create something truly
-          extraordinary.
-        </p>
-        <p>
-          A world where your data remains <em>yours</em>, where agents operate
-          transparently and ethically, and where open protocols enable
-          unprecedented collaboration and creativity.
-        </p>
-        <p><strong>That's the world Sandymount is building.</strong></p>
-      </section>
-
-      <footer>
-        <p>
-          Sandymount: Where open collaboration meets innovative technology,
-          uniting humans and intelligent systems to build in harmony.
-        </p>
-        <a
-          href="https://github.com/sandy-mount/sandymount/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cta-button"
-          >Join Us Today</a
-        >
-        <p style="margin-top: 20px">
-          <a
-            href="https://github.com/sandy-mount/sandymount/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="color: var(--white); text-decoration: underline"
-          >
-            Visit our GitHub Project Page
-          </a>
-        </p>
-      </footer>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon cyan">📋</div>
+            <div class="project-info">
+              <h4>Solid Lite</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Minimal Solid profile. HTTP CRUD foundation. Add features incrementally. Perfect for getting started.</p>
+          <div class="project-links">
+            <a href="https://solid-lite.org">→ Website</a>
+            <a href="https://github.com/solid-lite/solid-lite">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon green">📑</div>
+            <div class="project-info">
+              <h4>SLIPs</h4>
+              <span class="status">34+ specs</span>
+            </div>
+          </div>
+          <p>Solid Lite Implementation Proposals. Modular specs for auth, containers, WebSockets, RDF, and more.</p>
+          <div class="project-links">
+            <a href="https://solid-lite.github.io/slips/">→ All SLIPs</a>
+            <a href="https://github.com/solid-lite/slips">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon">🔗</div>
+            <div class="project-info">
+              <h4>Linked Web Storage (LWS)</h4>
+              <span class="status wip">W3C 2026</span>
+            </div>
+          </div>
+          <p>W3C Working Group. Bringing Solid principles to the web platform level. Targeting W3C Recommendation.</p>
+          <div class="project-links">
+            <a href="https://linkedwebstorage.com">→ Website</a>
+            <a href="https://github.com/nicola/w3c-charter-linked-web-storage">→ Charter</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon cyan">🎨</div>
+            <div class="project-info">
+              <h4>SolidOS / Mashlib</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Browser-based data browser. View and edit Linked Data visually. Works with any Solid pod.</p>
+          <div class="project-links">
+            <a href="https://solidos.github.io/mashlib/">→ Try It</a>
+            <a href="https://github.com/SolidOS">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon green">📚</div>
+            <div class="project-info">
+              <h4>SolidDocs</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Comprehensive documentation hub for Solid ecosystem. Tutorials, guides, and API references.</p>
+          <div class="project-links">
+            <a href="https://soliddocs.org">→ Website</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
+
+    <!-- Nostr & Messaging -->
+    <div class="category">
+      <div class="category-header">
+        <div class="category-icon orange">⚡</div>
+        <div>
+          <h3>Nostr & Messaging</h3>
+          <p>Censorship-resistant communication with cryptographic identity</p>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon orange">🗄️</div>
+            <div class="project-info">
+              <h4>Nosdav</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>WebDAV-compatible storage with Nostr authentication. HTTP file storage + cryptographic identity.</p>
+          <div class="project-links">
+            <a href="https://nosdav.com">→ Website</a>
+            <a href="https://github.com/nosdav">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon orange">📖</div>
+            <div class="project-info">
+              <h4>Nostr CG User Guide</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Comprehensive introduction to Nostr. Protocol basics, clients, relays, NIPs explained.</p>
+          <div class="project-links">
+            <a href="https://nostrcg.github.io/userguide/">→ Read Guide</a>
+            <a href="https://github.com/nostrcg/userguide">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon orange">🪪</div>
+            <div class="project-info">
+              <h4>did:nostr</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Decentralized identifiers using Nostr keypairs. Self-sovereign identity without registries.</p>
+          <div class="project-links">
+            <a href="https://github.com/nicola/did-method-nostr">→ Spec</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon orange">🔐</div>
+            <div class="project-info">
+              <h4>Nostr HTTP Auth</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>NIP-98 implementation. Authenticate HTTP requests using Nostr events. Zero passwords.</p>
+          <div class="project-links">
+            <a href="https://github.com/nostr-protocol/nips/blob/master/98.md">→ NIP-98</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Federation & Social -->
+    <div class="category">
+      <div class="category-header">
+        <div class="category-icon cyan">🌐</div>
+        <div>
+          <h3>Federation & Social</h3>
+          <p>ActivityPub, bridges, and federated social infrastructure</p>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon green">🌐</div>
+            <div class="project-info">
+              <h4>Ditto</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Nostr relay with ActivityPub bridge. Post once, reach both networks. Seamless federation.</p>
+          <div class="project-links">
+            <a href="https://soapbox.pub/ditto/">→ Website</a>
+            <a href="https://github.com/soapbox-pub/ditto">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon cyan">📬</div>
+            <div class="project-info">
+              <h4>FedBox</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Lightweight ActivityPub server. Generic federated inbox/outbox for any application.</p>
+          <div class="project-links">
+            <a href="https://github.com/go-fed/activity">→ go-fed</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon cyan">🔬</div>
+            <div class="project-info">
+              <h4>MicroFed</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Minimal ActivityPub implementation. Tiny footprint for embedded and edge deployments.</p>
+          <div class="project-links">
+            <a href="https://microfed.org">→ Website</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon cyan">📄</div>
+            <div class="project-info">
+              <h4>SocialDocs</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Documentation for the social web. ActivityPub, WebFinger, and federation guides.</p>
+          <div class="project-links">
+            <a href="https://socialdocs.org">→ Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & Agents -->
+    <div class="category">
+      <div class="category-header">
+        <div class="category-icon pink">🤖</div>
+        <div>
+          <h3>AI & Agentic Systems</h3>
+          <p>Connecting intelligent agents to the decentralized web</p>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon pink">🤖</div>
+            <div class="project-info">
+              <h4>MCP Server: Solid</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Model Context Protocol server for Solid pods. Let AI agents read/write your data with permission.</p>
+          <div class="project-links">
+            <a href="https://github.com/nicola/mcp-server-solid">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon pink">⚡</div>
+            <div class="project-info">
+              <h4>MCP Server: Nostr</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Model Context Protocol server for Nostr relays. AI agents that can post and read events.</p>
+          <div class="project-links">
+            <a href="https://github.com/nicola/mcp-server-nostr">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon pink">🕊️</div>
+            <div class="project-info">
+              <h4>Agentic Alliance</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Coalition for ethical AI agents. Open standards, user-first design, transparent behavior.</p>
+          <div class="project-links">
+            <a href="https://agenticalliance.com">→ Website</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon pink">📜</div>
+            <div class="project-info">
+              <h4>Agentic Principles</h4>
+              <span class="status">Manifesto</span>
+            </div>
+          </div>
+          <p>8 principles for autonomy and trust. Agents serve users. Data sovereignty is non-negotiable.</p>
+          <div class="project-links">
+            <a href="./manifesto.html">→ Read Manifesto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrastructure -->
+    <div class="category">
+      <div class="category-header">
+        <div class="category-icon yellow">🔧</div>
+        <div>
+          <h3>Infrastructure & Tools</h3>
+          <p>Supporting services, libraries, and utilities</p>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon yellow">⛓️</div>
+            <div class="project-info">
+              <h4>BlockTrails</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Bitcoin blockchain explorer with Linked Data. RDF representations of transactions and blocks.</p>
+          <div class="project-links">
+            <a href="https://blocktrails.org">→ Website</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon yellow">🧪</div>
+            <div class="project-info">
+              <h4>CTH Conformance</h4>
+              <span class="status">Testing</span>
+            </div>
+          </div>
+          <p>Solid Conformance Test Harness. Validate server implementations against the spec.</p>
+          <div class="project-links">
+            <a href="https://github.com/solid-contrib/conformance-test-harness">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon yellow">📊</div>
+            <div class="project-info">
+              <h4>rdflib.js</h4>
+              <span class="status">Core lib</span>
+            </div>
+          </div>
+          <p>JavaScript RDF library. Parse, serialize, and query Linked Data in the browser and Node.js.</p>
+          <div class="project-links">
+            <a href="https://github.com/linkeddata/rdflib.js">→ GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon yellow">🔑</div>
+            <div class="project-info">
+              <h4>solid-auth-client</h4>
+              <span class="status">Core lib</span>
+            </div>
+          </div>
+          <p>Authentication library for Solid apps. Handle login flows, tokens, and sessions.</p>
+          <div class="project-links">
+            <a href="https://github.com/solid/solid-auth-client">→ GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture" class="arch-section">
+    <div class="arch-inner">
+      <div class="section-header">
+        <div class="section-tag">System Design</div>
+        <h2>One Modular Architecture</h2>
+        <p>Every piece connects. Pick what you need. Build incrementally.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="arch-layers">
+          <div class="arch-layer">
+            <div class="arch-label">AI Agents</div>
+            <div class="arch-boxes">
+              <a href="https://github.com/nicola/mcp-server-solid" class="arch-box">MCP Solid</a>
+              <a href="https://github.com/nicola/mcp-server-nostr" class="arch-box">MCP Nostr</a>
+              <a href="https://agenticalliance.com" class="arch-box">Agentic Alliance</a>
+            </div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-label">Applications</div>
+            <div class="arch-boxes">
+              <a href="https://solidos.github.io/mashlib/" class="arch-box cyan">SolidOS</a>
+              <a href="https://soapbox.pub/ditto/" class="arch-box cyan">Ditto</a>
+              <a href="https://blocktrails.org" class="arch-box cyan">BlockTrails</a>
+            </div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-label">Servers</div>
+            <div class="arch-boxes">
+              <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer" class="arch-box orange">JSS</a>
+              <a href="https://nosdav.com" class="arch-box orange">Nosdav</a>
+              <a href="https://microfed.org" class="arch-box orange">MicroFed</a>
+            </div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-label">Specifications</div>
+            <div class="arch-boxes">
+              <a href="https://solid-lite.org" class="arch-box green">Solid Lite</a>
+              <a href="https://solid-lite.github.io/slips/" class="arch-box green">SLIPs</a>
+              <a href="https://linkedwebstorage.com" class="arch-box green">LWS</a>
+              <a href="https://github.com/nostr-protocol/nips" class="arch-box green">NIPs</a>
+            </div>
+          </div>
+          <div class="arch-layer">
+            <div class="arch-label">Protocols</div>
+            <div class="arch-boxes">
+              <a href="https://solidproject.org" class="arch-box">Solid/LDP</a>
+              <a href="https://activitypub.rocks" class="arch-box">ActivityPub</a>
+              <a href="https://nostr.com" class="arch-box">Nostr</a>
+              <a href="https://www.w3.org/TR/ldp/" class="arch-box">HTTP/REST</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="number">20+</div>
+          <div class="label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">34</div>
+          <div class="label">SLIPs</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">90%</div>
+          <div class="label">CTH Pass</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">4</div>
+          <div class="label">Protocols</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">2026</div>
+          <div class="label">W3C Target</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="principles-section">
+    <div class="principles-card">
+      <h3>The Agentic Principles Manifesto</h3>
+      <p>Eight principles for autonomy, dignity, and trust in the age of intelligent agents.</p>
+      <div class="principles-list">
+        <span>Agents Must Serve the User First</span>
+        <span>Identity and Intent Must Be Verifiable</span>
+        <span>Data Sovereignty Is Non-Negotiable</span>
+        <span>Open Protocols, Not Walled Gardens</span>
+        <span>Local-First, Cloud-Optional</span>
+        <span>Transparent Logic, Tunable Behavior</span>
+        <span>Sustainable Ecosystems Over Extraction</span>
+        <span>Community-Driven Standards</span>
+      </div>
+      <a href="./manifesto.html" class="btn btn-primary">Read the Full Manifesto</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Sandymount</div>
+        <p>Building the open, decentralized, agentic web—where users own their data and agents serve their interests.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Protocols</h4>
+        <a href="https://solidproject.org">Solid</a>
+        <a href="https://activitypub.rocks">ActivityPub</a>
+        <a href="https://nostr.com">Nostr</a>
+        <a href="https://soapbox.pub/ditto/">Ditto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Core Projects</h4>
+        <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer">JSS</a>
+        <a href="https://solid-lite.org">Solid Lite</a>
+        <a href="https://solid-lite.github.io/slips/">SLIPs</a>
+        <a href="https://nosdav.com">Nosdav</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://socialdocs.org">SocialDocs</a>
+        <a href="https://nostrcg.github.io/userguide/">Nostr Guide</a>
+        <a href="https://linkedwebstorage.com">LWS</a>
+        <a href="https://agenticalliance.com">Agentic Alliance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="./manifesto.html">Manifesto</a>
+        <a href="https://github.com/sandy-mount">GitHub</a>
+        <a href="https://solid-lite.org/getting-started.html">Get Started</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sandymount — One modular ecosystem. Infinite possibilities.</p>
+    </div>
+  </footer>
+</body>
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Principles Manifesto - Sandymount</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-card: #12121a;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #8b5cf6;
+      --accent-glow: rgba(139, 92, 246, 0.3);
+      --border: #27272a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .nav a { color: var(--text-muted); margin-left: 1.5rem; }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .principle {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .principle h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .principle h3 .num {
+      background: var(--accent);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .principle p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .principle .quote {
+      background: rgba(139, 92, 246, 0.1);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--text);
+    }
+    .principle code {
+      background: rgba(139, 92, 246, 0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    .footer a { margin: 0 0.75rem; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="./" style="color: var(--text); font-weight: 600;">← Sandymount</a>
+    <div>
+      <a href="https://github.com/sandy-mount">GitHub</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>🕊️ Agentic Principles Manifesto</h1>
+    <p>A call for autonomy, dignity, and trust in the age of intelligent agents.</p>
+  </header>
+
+  <main class="main">
+    <div class="principle">
+      <h3><span class="num">1</span> Agents Must Serve the User First</h3>
+      <p>Agents are extensions of human will—not proxies for corporations. They must act <em>in the user's interest</em>, not in the interest of advertisers, platforms, or centralized authorities.</p>
+      <div class="quote">Your agent is <strong>your agent</strong>—not someone else's product.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">2</span> Identity and Intent Must Be Verifiable</h3>
+      <p>Agents must use cryptographically verifiable identity (e.g., <code>did:nostr</code>, WebID, or other decentralized IDs). All actions and intentions must be transparently attributable.</p>
+      <div class="quote">No ghost agents. No hidden motives. No black boxes.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">3</span> Data Sovereignty Is Non-Negotiable</h3>
+      <p>Agents must respect user-owned data. They must store and access information according to <strong>user-defined permissions</strong>, preferably using self-hosted or interoperable protocols like Solid or Nosdav.</p>
+      <div class="quote">What the agent knows <em>about you</em> must remain <em>yours</em>.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">4</span> Open Protocols, Not Walled Gardens</h3>
+      <p>Agents should speak open languages—Nostr, ActivityPub, HTTP, RDF, Bitcoin—not proprietary APIs that lock users in. Interoperability is a right, not a feature.</p>
+      <div class="quote">Let agents roam. Let users choose.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">5</span> Local-First, Cloud-Optional</h3>
+      <p>Agents should default to local operation. Cloud support must be modular, auditable, and replaceable.</p>
+      <div class="quote">Agents should run <em>on your machine</em> unless <em>you</em> say otherwise.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">6</span> Transparent Logic, Tunable Behavior</h3>
+      <p>Users must be able to inspect, adjust, and fork their agents' logic. Agents should support interpretable rule sets and modifiable preferences, not opaque neural nets alone.</p>
+      <div class="quote">You deserve to understand why your agent acts—and change it when needed.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">7</span> Sustainable Ecosystems Over Extraction</h3>
+      <p>Agentic systems should reward contributors, not extract value unfairly. Cryptoeconomic primitives like Bitcoin can enable fair incentives—without surveillance capitalism.</p>
+      <div class="quote">Build systems that <strong>pay it forward</strong>, not lock it down.</div>
+    </div>
+
+    <div class="principle">
+      <h3><span class="num">8</span> Community-Driven Standards and Governance</h3>
+      <p>Agent behavior, safety, and alignment standards must be open, auditable, and shaped by users—not dictated top-down.</p>
+      <div class="quote">The age of agents must be a commons—not an empire.</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <a href="./">Home</a>
+      <a href="https://github.com/sandy-mount">GitHub</a>
+    </p>
+    <p style="margin-top: 1rem;">Sandymount — Building the open, agentic future.</p>
+  </footer>
+</body>
+</html>
