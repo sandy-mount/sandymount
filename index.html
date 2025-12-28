@@ -294,7 +294,7 @@
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.25rem;
     }
-    .project-card {
+    a.project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -303,11 +303,15 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
     }
-    .project-card:hover {
+    a.project-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      color: var(--text);
     }
     .project-top {
       display: flex;
@@ -350,21 +354,7 @@
       color: var(--text-muted);
       font-size: 0.9rem;
       flex-grow: 1;
-      margin-bottom: 1rem;
     }
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      flex-wrap: wrap;
-    }
-    .project-links a {
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .project-links a:hover { color: var(--accent); }
 
     /* Architecture Diagram */
     .arch-section {
@@ -630,7 +620,7 @@
         </div>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+        <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer" class="project-card">
           <div class="project-top">
             <div class="project-icon">📦</div>
             <div class="project-info">
@@ -639,12 +629,8 @@
             </div>
           </div>
           <p>Lightweight, modular Solid server. 90%+ CTH conformance. Single binary. Built-in IDP. Production ready.</p>
-          <div class="project-links">
-            <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer">→ GitHub</a>
-            <a href="https://www.npmjs.com/package/jss">→ npm</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://solid-lite.org" class="project-card">
           <div class="project-top">
             <div class="project-icon cyan">📋</div>
             <div class="project-info">
@@ -653,12 +639,8 @@
             </div>
           </div>
           <p>Minimal Solid profile. HTTP CRUD foundation. Add features incrementally. Perfect for getting started.</p>
-          <div class="project-links">
-            <a href="https://solid-lite.org">→ Website</a>
-            <a href="https://github.com/solid-lite">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://solid-lite.github.io/slips/" class="project-card">
           <div class="project-top">
             <div class="project-icon green">📑</div>
             <div class="project-info">
@@ -667,12 +649,8 @@
             </div>
           </div>
           <p>Solid Lite Implementation Proposals. Modular specs for auth, containers, WebSockets, RDF, and more.</p>
-          <div class="project-links">
-            <a href="https://solid-lite.github.io/slips/">→ All SLIPs</a>
-            <a href="https://github.com/solid-lite/slips">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://linkedwebstorage.com" class="project-card">
           <div class="project-top">
             <div class="project-icon">🔗</div>
             <div class="project-info">
@@ -681,11 +659,8 @@
             </div>
           </div>
           <p>W3C Working Group. Bringing Solid principles to the web platform level. Targeting W3C Recommendation.</p>
-          <div class="project-links">
-            <a href="https://linkedwebstorage.com">→ Website</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://solidos.github.io/mashlib/" class="project-card">
           <div class="project-top">
             <div class="project-icon cyan">🎨</div>
             <div class="project-info">
@@ -694,12 +669,8 @@
             </div>
           </div>
           <p>Browser-based data browser. View and edit Linked Data visually. Works with any Solid pod.</p>
-          <div class="project-links">
-            <a href="https://solidos.github.io/mashlib/">→ Try It</a>
-            <a href="https://github.com/SolidOS">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://solidproject.org/developers" class="project-card">
           <div class="project-top">
             <div class="project-icon green">📚</div>
             <div class="project-info">
@@ -708,10 +679,7 @@
             </div>
           </div>
           <p>Official Solid documentation. Tutorials, guides, and API references for building Solid apps.</p>
-          <div class="project-links">
-            <a href="https://solidproject.org/developers">→ Docs</a>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -725,7 +693,7 @@
         </div>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+        <a href="https://nosdav.com" class="project-card">
           <div class="project-top">
             <div class="project-icon orange">🗄️</div>
             <div class="project-info">
@@ -734,12 +702,8 @@
             </div>
           </div>
           <p>WebDAV-compatible storage with Nostr authentication. HTTP file storage + cryptographic identity.</p>
-          <div class="project-links">
-            <a href="https://nosdav.com">→ Website</a>
-            <a href="https://github.com/nosdav">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://nostrcg.github.io/userguide/" class="project-card">
           <div class="project-top">
             <div class="project-icon orange">📖</div>
             <div class="project-info">
@@ -748,25 +712,18 @@
             </div>
           </div>
           <p>Comprehensive introduction to Nostr. Protocol basics, clients, relays, NIPs explained.</p>
-          <div class="project-links">
-            <a href="https://nostrcg.github.io/userguide/">→ Read Guide</a>
-            <a href="https://github.com/nostrcg/userguide">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://nostrcg.github.io/devguide/" class="project-card">
           <div class="project-top">
-            <div class="project-icon orange">🪪</div>
+            <div class="project-icon orange">💻</div>
             <div class="project-info">
-              <h4>did:nostr</h4>
-              <span class="status">Spec</span>
+              <h4>Nostr CG Dev Guide</h4>
+              <span class="status">Live</span>
             </div>
           </div>
-          <p>Decentralized identifiers using Nostr keypairs. Self-sovereign identity without registries.</p>
-          <div class="project-links">
-            <a href="https://github.com/nostr-protocol/nips">→ NIPs</a>
-          </div>
-        </div>
-        <div class="project-card">
+          <p>Developer documentation for building on Nostr. Libraries, tools, and implementation patterns.</p>
+        </a>
+        <a href="https://github.com/nostr-protocol/nips/blob/master/98.md" class="project-card">
           <div class="project-top">
             <div class="project-icon orange">🔐</div>
             <div class="project-info">
@@ -775,10 +732,17 @@
             </div>
           </div>
           <p>Authenticate HTTP requests using Nostr events. Zero passwords needed.</p>
-          <div class="project-links">
-            <a href="https://github.com/nostr-protocol/nips/blob/master/98.md">→ NIP-98</a>
+        </a>
+        <a href="https://fonstr.com" class="project-card">
+          <div class="project-top">
+            <div class="project-icon orange">🎵</div>
+            <div class="project-info">
+              <h4>Fonstr</h4>
+              <span class="status">Live</span>
+            </div>
           </div>
-        </div>
+          <p>Nostr-based music and audio platform. Decentralized content distribution for creators.</p>
+        </a>
       </div>
     </div>
 
@@ -792,7 +756,7 @@
         </div>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+        <a href="https://soapbox.pub/ditto/" class="project-card">
           <div class="project-top">
             <div class="project-icon green">🌐</div>
             <div class="project-info">
@@ -801,12 +765,8 @@
             </div>
           </div>
           <p>Nostr relay with ActivityPub bridge. Post once, reach both networks. Seamless federation.</p>
-          <div class="project-links">
-            <a href="https://soapbox.pub/ditto/">→ Website</a>
-            <a href="https://github.com/soapbox-pub/ditto">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://microfed.org" class="project-card">
           <div class="project-top">
             <div class="project-icon cyan">🔬</div>
             <div class="project-info">
@@ -815,11 +775,8 @@
             </div>
           </div>
           <p>Minimal ActivityPub library. Zero dependencies. Pure JavaScript for embedded deployments.</p>
-          <div class="project-links">
-            <a href="https://microfed.org">→ Website</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://socialdocs.org" class="project-card">
           <div class="project-top">
             <div class="project-icon cyan">📄</div>
             <div class="project-info">
@@ -828,10 +785,7 @@
             </div>
           </div>
           <p>Documentation for the social web. ActivityPub, WebFinger, and federation guides.</p>
-          <div class="project-links">
-            <a href="https://socialdocs.org">→ Website</a>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -845,7 +799,7 @@
         </div>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+        <a href="https://agenticalliance.com" class="project-card">
           <div class="project-top">
             <div class="project-icon pink">🕊️</div>
             <div class="project-info">
@@ -854,11 +808,8 @@
             </div>
           </div>
           <p>Coalition for ethical AI agents. Open standards, user-first design, transparent behavior.</p>
-          <div class="project-links">
-            <a href="https://agenticalliance.com">→ Website</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="./manifesto.html" class="project-card">
           <div class="project-top">
             <div class="project-icon pink">📜</div>
             <div class="project-info">
@@ -867,11 +818,8 @@
             </div>
           </div>
           <p>8 principles for autonomy and trust. Agents serve users. Data sovereignty is non-negotiable.</p>
-          <div class="project-links">
-            <a href="./manifesto.html">→ Read Manifesto</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://modelcontextprotocol.io" class="project-card">
           <div class="project-top">
             <div class="project-icon pink">🔌</div>
             <div class="project-info">
@@ -880,10 +828,7 @@
             </div>
           </div>
           <p>Connect AI models to external tools and data sources. Open protocol by Anthropic.</p>
-          <div class="project-links">
-            <a href="https://modelcontextprotocol.io">→ Website</a>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -897,7 +842,7 @@
         </div>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+        <a href="https://blocktrails.org" class="project-card">
           <div class="project-top">
             <div class="project-icon yellow">⛓️</div>
             <div class="project-info">
@@ -906,24 +851,8 @@
             </div>
           </div>
           <p>Bitcoin state anchoring with cryptographic key chains. Nostr-native state on Bitcoin.</p>
-          <div class="project-links">
-            <a href="https://blocktrails.org">→ Website</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-top">
-            <div class="project-icon yellow">🧪</div>
-            <div class="project-info">
-              <h4>CTH Conformance</h4>
-              <span class="status">Testing</span>
-            </div>
-          </div>
-          <p>Solid Conformance Test Harness. Validate server implementations against the spec.</p>
-          <div class="project-links">
-            <a href="https://github.com/solid-contrib/conformance-test-harness">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://github.com/linkeddata/rdflib.js" class="project-card">
           <div class="project-top">
             <div class="project-icon yellow">📊</div>
             <div class="project-info">
@@ -932,11 +861,8 @@
             </div>
           </div>
           <p>JavaScript RDF library. Parse, serialize, and query Linked Data in the browser and Node.js.</p>
-          <div class="project-links">
-            <a href="https://github.com/linkeddata/rdflib.js">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="https://solidproject.org/TR/oidc" class="project-card">
           <div class="project-top">
             <div class="project-icon yellow">🔑</div>
             <div class="project-info">
@@ -945,10 +871,7 @@
             </div>
           </div>
           <p>OpenID Connect profile for Solid. Decentralized authentication for pod access.</p>
-          <div class="project-links">
-            <a href="https://solidproject.org/TR/oidc">→ Spec</a>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
