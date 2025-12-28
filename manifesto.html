@@ -7,13 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0f;
-      --bg-card: #12121a;
-      --text: #e4e4e7;
-      --text-muted: #71717a;
-      --accent: #8b5cf6;
-      --accent-glow: rgba(139, 92, 246, 0.3);
-      --border: #27272a;
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --text: #18181b;
+      --text-muted: #52525b;
+      --accent: #7c3aed;
+      --accent-glow: rgba(124, 58, 237, 0.15);
+      --border: #e4e4e7;
+      --gradient: linear-gradient(135deg, #7c3aed, #0891b2);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -34,6 +35,11 @@
       margin: 0 auto;
     }
     .nav a { color: var(--text-muted); margin-left: 1.5rem; }
+    .nav-back {
+      color: var(--text) !important;
+      font-weight: 600;
+      margin-left: 0 !important;
+    }
 
     .hero {
       text-align: center;
@@ -44,7 +50,7 @@
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -66,6 +72,7 @@
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .principle h3 {
       font-size: 1.25rem;
@@ -91,7 +98,7 @@
       margin-bottom: 1rem;
     }
     .principle .quote {
-      background: rgba(139, 92, 246, 0.1);
+      background: rgba(124, 58, 237, 0.06);
       border-left: 3px solid var(--accent);
       padding: 1rem 1.25rem;
       border-radius: 0 8px 8px 0;
@@ -99,7 +106,7 @@
       color: var(--text);
     }
     .principle code {
-      background: rgba(139, 92, 246, 0.2);
+      background: rgba(124, 58, 237, 0.1);
       padding: 0.2rem 0.5rem;
       border-radius: 4px;
       font-size: 0.9em;
@@ -117,14 +124,14 @@
 </head>
 <body>
   <nav class="nav">
-    <a href="./" style="color: var(--text); font-weight: 600;">← Sandymount</a>
+    <a href="./" class="nav-back">← Sandymount</a>
     <div>
       <a href="https://github.com/sandy-mount">GitHub</a>
     </div>
   </nav>
 
   <header class="hero">
-    <h1>🕊️ Agentic Principles Manifesto</h1>
+    <h1>Agentic Principles Manifesto</h1>
     <p>A call for autonomy, dignity, and trust in the age of intelligent agents.</p>
   </header>
 

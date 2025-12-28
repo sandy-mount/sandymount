@@ -7,20 +7,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0f;
-      --bg-card: #12121a;
-      --bg-card-hover: #1a1a24;
-      --text: #e4e4e7;
-      --text-muted: #71717a;
-      --accent: #8b5cf6;
-      --accent-cyan: #06b6d4;
-      --accent-orange: #f97316;
-      --accent-green: #22c55e;
-      --accent-pink: #ec4899;
-      --accent-yellow: #eab308;
-      --accent-glow: rgba(139, 92, 246, 0.3);
-      --border: #27272a;
-      --gradient: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f5f5f5;
+      --text: #18181b;
+      --text-muted: #52525b;
+      --accent: #7c3aed;
+      --accent-cyan: #0891b2;
+      --accent-orange: #ea580c;
+      --accent-green: #16a34a;
+      --accent-pink: #db2777;
+      --accent-yellow: #ca8a04;
+      --accent-glow: rgba(124, 58, 237, 0.15);
+      --border: #e4e4e7;
+      --gradient: linear-gradient(135deg, #7c3aed, #0891b2);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -33,13 +33,13 @@
     a { color: var(--accent); text-decoration: none; transition: all 0.2s; }
     a:hover { color: var(--accent-cyan); }
 
-    /* Animated background */
+    /* Subtle background */
     .bg-grid {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background-image:
-        linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
       background-size: 50px 50px;
       pointer-events: none;
       z-index: -1;
@@ -49,13 +49,12 @@
       width: 800px; height: 800px;
       border-radius: 50%;
       filter: blur(180px);
-      opacity: 0.12;
+      opacity: 0.08;
       pointer-events: none;
       z-index: -1;
     }
     .bg-glow-1 { top: -300px; left: -200px; background: var(--accent); }
     .bg-glow-2 { bottom: -300px; right: -200px; background: var(--accent-cyan); }
-    .bg-glow-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--accent-orange); opacity: 0.05; }
 
     /* Navigation */
     .nav {
@@ -67,10 +66,10 @@
       margin: 0 auto;
       position: sticky;
       top: 0;
-      background: rgba(10, 10, 15, 0.8);
+      background: rgba(250, 250, 250, 0.9);
       backdrop-filter: blur(20px);
       z-index: 100;
-      border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+      border-bottom: 1px solid var(--border);
     }
     .nav-logo {
       font-size: 1.5rem;
@@ -99,8 +98,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(139, 92, 246, 0.15);
-      border: 1px solid rgba(139, 92, 246, 0.3);
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.2);
       padding: 0.6rem 1.25rem;
       border-radius: 25px;
       font-size: 0.9rem;
@@ -112,7 +111,7 @@
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #fff 0%, #a5b4fc 40%, #06b6d4 80%, #22c55e 100%);
+      background: linear-gradient(135deg, #18181b 0%, #7c3aed 50%, #0891b2 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -193,8 +192,8 @@
     }
     .section-tag {
       display: inline-block;
-      background: rgba(139, 92, 246, 0.15);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.15);
       padding: 0.35rem 0.9rem;
       border-radius: 15px;
       font-size: 0.8rem;
@@ -225,6 +224,7 @@
       transition: all 0.3s;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .sand-card::before {
       content: '';
@@ -238,7 +238,7 @@
     .sand-card:hover {
       transform: translateY(-4px);
       border-color: var(--card-accent);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
     .sand-card:hover::before { opacity: 1; }
     .sand-card .letter {
@@ -253,10 +253,10 @@
     .sand-card h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
     .sand-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
     .sand-card .link { font-size: 0.85rem; }
-    .sand-s { --card-accent: #8b5cf6; --card-accent-2: #a78bfa; }
-    .sand-a { --card-accent: #06b6d4; --card-accent-2: #22d3ee; }
-    .sand-n { --card-accent: #f97316; --card-accent-2: #fb923c; }
-    .sand-d { --card-accent: #22c55e; --card-accent-2: #4ade80; }
+    .sand-s { --card-accent: #7c3aed; --card-accent-2: #a78bfa; }
+    .sand-a { --card-accent: #0891b2; --card-accent-2: #22d3ee; }
+    .sand-n { --card-accent: #ea580c; --card-accent-2: #fb923c; }
+    .sand-d { --card-accent: #16a34a; --card-accent-2: #4ade80; }
 
     /* Project Categories */
     .category {
@@ -272,7 +272,7 @@
     }
     .category-icon {
       width: 48px; height: 48px;
-      background: rgba(139, 92, 246, 0.15);
+      background: rgba(124, 58, 237, 0.1);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -302,11 +302,12 @@
       transition: all 0.3s;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .project-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .project-top {
       display: flex;
@@ -316,7 +317,7 @@
     }
     .project-icon {
       width: 44px; height: 44px;
-      background: rgba(139, 92, 246, 0.12);
+      background: rgba(124, 58, 237, 0.08);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -324,11 +325,11 @@
       font-size: 1.25rem;
       flex-shrink: 0;
     }
-    .project-icon.green { background: rgba(34, 197, 94, 0.12); }
-    .project-icon.cyan { background: rgba(6, 182, 212, 0.12); }
-    .project-icon.orange { background: rgba(249, 115, 22, 0.12); }
-    .project-icon.pink { background: rgba(236, 72, 153, 0.12); }
-    .project-icon.yellow { background: rgba(234, 179, 8, 0.12); }
+    .project-icon.green { background: rgba(22, 163, 74, 0.08); }
+    .project-icon.cyan { background: rgba(8, 145, 178, 0.08); }
+    .project-icon.orange { background: rgba(234, 88, 12, 0.08); }
+    .project-icon.pink { background: rgba(219, 39, 119, 0.08); }
+    .project-icon.yellow { background: rgba(202, 138, 4, 0.08); }
     .project-info h4 {
       font-size: 1.1rem;
       margin-bottom: 0.25rem;
@@ -336,14 +337,14 @@
     .project-info .status {
       font-size: 0.75rem;
       color: var(--accent-green);
-      background: rgba(34, 197, 94, 0.1);
+      background: rgba(22, 163, 74, 0.1);
       padding: 0.15rem 0.5rem;
       border-radius: 10px;
       display: inline-block;
     }
     .project-info .status.wip {
       color: var(--accent-orange);
-      background: rgba(249, 115, 22, 0.1);
+      background: rgba(234, 88, 12, 0.1);
     }
     .project-card > p {
       color: var(--text-muted);
@@ -367,7 +368,7 @@
 
     /* Architecture Diagram */
     .arch-section {
-      background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.03), transparent);
+      background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.02), transparent);
       padding: 5rem 2rem;
     }
     .arch-inner {
@@ -380,6 +381,7 @@
       border-radius: 20px;
       padding: 3rem;
       margin-top: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .arch-layers {
       display: flex;
@@ -405,23 +407,25 @@
       flex: 1;
     }
     .arch-box {
-      background: rgba(139, 92, 246, 0.1);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.15);
       padding: 0.6rem 1rem;
       border-radius: 8px;
       font-size: 0.85rem;
       transition: all 0.2s;
+      color: var(--text);
     }
     .arch-box:hover {
-      background: rgba(139, 92, 246, 0.2);
+      background: rgba(124, 58, 237, 0.15);
       border-color: var(--accent);
+      color: var(--accent);
     }
-    .arch-box.cyan { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.2); }
-    .arch-box.cyan:hover { background: rgba(6, 182, 212, 0.2); border-color: var(--accent-cyan); }
-    .arch-box.orange { background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.2); }
-    .arch-box.orange:hover { background: rgba(249, 115, 22, 0.2); border-color: var(--accent-orange); }
-    .arch-box.green { background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.2); }
-    .arch-box.green:hover { background: rgba(34, 197, 94, 0.2); border-color: var(--accent-green); }
+    .arch-box.cyan { background: rgba(8, 145, 178, 0.08); border-color: rgba(8, 145, 178, 0.15); }
+    .arch-box.cyan:hover { background: rgba(8, 145, 178, 0.15); border-color: var(--accent-cyan); color: var(--accent-cyan); }
+    .arch-box.orange { background: rgba(234, 88, 12, 0.08); border-color: rgba(234, 88, 12, 0.15); }
+    .arch-box.orange:hover { background: rgba(234, 88, 12, 0.15); border-color: var(--accent-orange); color: var(--accent-orange); }
+    .arch-box.green { background: rgba(22, 163, 74, 0.08); border-color: rgba(22, 163, 74, 0.15); }
+    .arch-box.green:hover { background: rgba(22, 163, 74, 0.15); border-color: var(--accent-green); color: var(--accent-green); }
     @media (max-width: 700px) {
       .arch-layer { flex-direction: column; align-items: flex-start; }
       .arch-label { width: auto; text-align: left; }
@@ -462,8 +466,8 @@
     .principles-card {
       max-width: 800px;
       margin: 0 auto;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(8, 145, 178, 0.05));
+      border: 1px solid rgba(124, 58, 237, 0.15);
       border-radius: 20px;
       padding: 3.5rem;
     }
@@ -549,7 +553,6 @@
   <div class="bg-grid"></div>
   <div class="bg-glow bg-glow-1"></div>
   <div class="bg-glow bg-glow-2"></div>
-  <div class="bg-glow bg-glow-3"></div>
 
   <nav class="nav">
     <a href="./" class="nav-logo">Sandymount</a>
@@ -652,7 +655,7 @@
           <p>Minimal Solid profile. HTTP CRUD foundation. Add features incrementally. Perfect for getting started.</p>
           <div class="project-links">
             <a href="https://solid-lite.org">→ Website</a>
-            <a href="https://github.com/solid-lite/solid-lite">→ GitHub</a>
+            <a href="https://github.com/solid-lite">→ GitHub</a>
           </div>
         </div>
         <div class="project-card">
@@ -680,7 +683,6 @@
           <p>W3C Working Group. Bringing Solid principles to the web platform level. Targeting W3C Recommendation.</p>
           <div class="project-links">
             <a href="https://linkedwebstorage.com">→ Website</a>
-            <a href="https://github.com/nicola/w3c-charter-linked-web-storage">→ Charter</a>
           </div>
         </div>
         <div class="project-card">
@@ -701,13 +703,13 @@
           <div class="project-top">
             <div class="project-icon green">📚</div>
             <div class="project-info">
-              <h4>SolidDocs</h4>
+              <h4>Solid Developer Portal</h4>
               <span class="status">Live</span>
             </div>
           </div>
-          <p>Comprehensive documentation hub for Solid ecosystem. Tutorials, guides, and API references.</p>
+          <p>Official Solid documentation. Tutorials, guides, and API references for building Solid apps.</p>
           <div class="project-links">
-            <a href="https://soliddocs.org">→ Website</a>
+            <a href="https://solidproject.org/developers">→ Docs</a>
           </div>
         </div>
       </div>
@@ -756,23 +758,23 @@
             <div class="project-icon orange">🪪</div>
             <div class="project-info">
               <h4>did:nostr</h4>
-              <span class="status">Live</span>
+              <span class="status">Spec</span>
             </div>
           </div>
           <p>Decentralized identifiers using Nostr keypairs. Self-sovereign identity without registries.</p>
           <div class="project-links">
-            <a href="https://github.com/nicola/did-method-nostr">→ Spec</a>
+            <a href="https://github.com/nostr-protocol/nips">→ NIPs</a>
           </div>
         </div>
         <div class="project-card">
           <div class="project-top">
             <div class="project-icon orange">🔐</div>
             <div class="project-info">
-              <h4>Nostr HTTP Auth</h4>
+              <h4>Nostr HTTP Auth (NIP-98)</h4>
               <span class="status">Live</span>
             </div>
           </div>
-          <p>NIP-98 implementation. Authenticate HTTP requests using Nostr events. Zero passwords.</p>
+          <p>Authenticate HTTP requests using Nostr events. Zero passwords needed.</p>
           <div class="project-links">
             <a href="https://github.com/nostr-protocol/nips/blob/master/98.md">→ NIP-98</a>
           </div>
@@ -806,26 +808,13 @@
         </div>
         <div class="project-card">
           <div class="project-top">
-            <div class="project-icon cyan">📬</div>
-            <div class="project-info">
-              <h4>FedBox</h4>
-              <span class="status">Live</span>
-            </div>
-          </div>
-          <p>Lightweight ActivityPub server. Generic federated inbox/outbox for any application.</p>
-          <div class="project-links">
-            <a href="https://github.com/go-fed/activity">→ go-fed</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-top">
             <div class="project-icon cyan">🔬</div>
             <div class="project-info">
               <h4>MicroFed</h4>
               <span class="status">Live</span>
             </div>
           </div>
-          <p>Minimal ActivityPub implementation. Tiny footprint for embedded and edge deployments.</p>
+          <p>Minimal ActivityPub library. Zero dependencies. Pure JavaScript for embedded deployments.</p>
           <div class="project-links">
             <a href="https://microfed.org">→ Website</a>
           </div>
@@ -843,6 +832,19 @@
             <a href="https://socialdocs.org">→ Website</a>
           </div>
         </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon cyan">📬</div>
+            <div class="project-info">
+              <h4>go-fed/activity</h4>
+              <span class="status">Live</span>
+            </div>
+          </div>
+          <p>Go library for ActivityPub. Build federated applications with type-safe ActivityStreams.</p>
+          <div class="project-links">
+            <a href="https://github.com/go-ap/activitypub">→ GitHub</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -858,36 +860,10 @@
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-top">
-            <div class="project-icon pink">🤖</div>
-            <div class="project-info">
-              <h4>MCP Server: Solid</h4>
-              <span class="status">Live</span>
-            </div>
-          </div>
-          <p>Model Context Protocol server for Solid pods. Let AI agents read/write your data with permission.</p>
-          <div class="project-links">
-            <a href="https://github.com/nicola/mcp-server-solid">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-top">
-            <div class="project-icon pink">⚡</div>
-            <div class="project-info">
-              <h4>MCP Server: Nostr</h4>
-              <span class="status">Live</span>
-            </div>
-          </div>
-          <p>Model Context Protocol server for Nostr relays. AI agents that can post and read events.</p>
-          <div class="project-links">
-            <a href="https://github.com/nicola/mcp-server-nostr">→ GitHub</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-top">
             <div class="project-icon pink">🕊️</div>
             <div class="project-info">
               <h4>Agentic Alliance</h4>
-              <span class="status">Live</span>
+              <span class="status wip">Prelaunch</span>
             </div>
           </div>
           <p>Coalition for ethical AI agents. Open standards, user-first design, transparent behavior.</p>
@@ -906,6 +882,19 @@
           <p>8 principles for autonomy and trust. Agents serve users. Data sovereignty is non-negotiable.</p>
           <div class="project-links">
             <a href="./manifesto.html">→ Read Manifesto</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon pink">🔌</div>
+            <div class="project-info">
+              <h4>Model Context Protocol</h4>
+              <span class="status">Standard</span>
+            </div>
+          </div>
+          <p>Connect AI models to external tools and data sources. Open protocol by Anthropic.</p>
+          <div class="project-links">
+            <a href="https://modelcontextprotocol.io">→ Website</a>
           </div>
         </div>
       </div>
@@ -929,7 +918,7 @@
               <span class="status">Live</span>
             </div>
           </div>
-          <p>Bitcoin blockchain explorer with Linked Data. RDF representations of transactions and blocks.</p>
+          <p>Bitcoin state anchoring with cryptographic key chains. Nostr-native state on Bitcoin.</p>
           <div class="project-links">
             <a href="https://blocktrails.org">→ Website</a>
           </div>
@@ -964,13 +953,13 @@
           <div class="project-top">
             <div class="project-icon yellow">🔑</div>
             <div class="project-info">
-              <h4>solid-auth-client</h4>
-              <span class="status">Core lib</span>
+              <h4>Solid OIDC</h4>
+              <span class="status">Spec</span>
             </div>
           </div>
-          <p>Authentication library for Solid apps. Handle login flows, tokens, and sessions.</p>
+          <p>OpenID Connect profile for Solid. Decentralized authentication for pod access.</p>
           <div class="project-links">
-            <a href="https://github.com/solid/solid-auth-client">→ GitHub</a>
+            <a href="https://solidproject.org/TR/oidc">→ Spec</a>
           </div>
         </div>
       </div>
@@ -990,8 +979,7 @@
           <div class="arch-layer">
             <div class="arch-label">AI Agents</div>
             <div class="arch-boxes">
-              <a href="https://github.com/nicola/mcp-server-solid" class="arch-box">MCP Solid</a>
-              <a href="https://github.com/nicola/mcp-server-nostr" class="arch-box">MCP Nostr</a>
+              <a href="https://modelcontextprotocol.io" class="arch-box">MCP</a>
               <a href="https://agenticalliance.com" class="arch-box">Agentic Alliance</a>
             </div>
           </div>
