@@ -1,0 +1,86 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafafa"/>
+      <stop offset="100%" style="stop-color:#f0f0f5"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="s-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="a-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="n-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ea580c"/>
+      <stop offset="100%" style="stop-color:#fb923c"/>
+    </linearGradient>
+    <linearGradient id="d-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(124,58,237,0.05)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="300" fill="#7c3aed" opacity="0.03"/>
+  <circle cx="1100" cy="530" r="250" fill="#0891b2" opacity="0.03"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+
+  <!-- Main content -->
+  <!-- Logo text -->
+  <text x="600" y="180" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="url(#accent)">Sandymount</text>
+
+  <!-- SAND Letters -->
+  <g transform="translate(600, 320)">
+    <!-- S -->
+    <g transform="translate(-270, 0)">
+      <rect x="-60" y="-60" width="120" height="120" rx="16" fill="white" stroke="#e4e4e7" stroke-width="2"/>
+      <text x="0" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="url(#s-grad)">S</text>
+    </g>
+    <!-- A -->
+    <g transform="translate(-90, 0)">
+      <rect x="-60" y="-60" width="120" height="120" rx="16" fill="white" stroke="#e4e4e7" stroke-width="2"/>
+      <text x="0" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="url(#a-grad)">A</text>
+    </g>
+    <!-- N -->
+    <g transform="translate(90, 0)">
+      <rect x="-60" y="-60" width="120" height="120" rx="16" fill="white" stroke="#e4e4e7" stroke-width="2"/>
+      <text x="0" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="url(#n-grad)">N</text>
+    </g>
+    <!-- D -->
+    <g transform="translate(270, 0)">
+      <rect x="-60" y="-60" width="120" height="120" rx="16" fill="white" stroke="#e4e4e7" stroke-width="2"/>
+      <text x="0" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="url(#d-grad)">D</text>
+    </g>
+  </g>
+
+  <!-- Labels under letters -->
+  <g transform="translate(600, 410)" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#52525b">
+    <text x="-270" y="0" text-anchor="middle">Solid</text>
+    <text x="-90" y="0" text-anchor="middle">ActivityPub</text>
+    <text x="90" y="0" text-anchor="middle">Nostr</text>
+    <text x="270" y="0" text-anchor="middle">did:nostr</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="600" y="500" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="400" fill="#52525b">The Open, Agentic, Decentralized Web</text>
+
+  <!-- URL -->
+  <text x="600" y="580" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#7c3aed">sandy-mount.com</text>
+</svg>
