@@ -333,6 +333,32 @@
           <a href="https://solid.github.io/chat/">Chat Specification →</a>
         </div>
       </div>
+
+      <!-- Step 5: Mount -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-time">2 minutes</span>
+          <span class="step-layer s">S — Data/Web</span>
+        </div>
+        <h2>5. Mount Your Pod</h2>
+        <p class="aha">"My cloud is my filesystem."</p>
+        <p>This is where it clicks. Mount your Solid pod locally via SSHFS. Your decentralized data becomes a folder on your device.</p>
+
+        <div class="step-code">
+          <span class="comment"># Mount your pod locally</span><br>
+          <span class="command">sshfs you@solidweb.org:/pod ~/mypod</span><br><br>
+          <span class="comment"># Browse your decentralized data</span><br>
+          <span class="command">ls ~/mypod</span><br>
+          <span class="output">chat/  notes/  contacts/  photos/</span>
+        </div>
+
+        <p>"Own your data" isn't a slogan — it's <code>ls -la</code>. Browse it. Edit it. Sync it. Back it up. It's just files.</p>
+
+        <div class="step-links">
+          <a href="https://solidweb.org/">solidweb.org →</a>
+          <a href="https://en.wikipedia.org/wiki/SSHFS">What is SSHFS? →</a>
+        </div>
+      </div>
     </div>
 
     <section class="next-steps">
