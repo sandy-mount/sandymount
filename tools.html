@@ -72,6 +72,18 @@
       align-items: center;
       justify-content: space-between;
     }
+    .tool-card h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .tool-card h3 a:hover {
+      color: var(--accent);
+    }
+    .tool-card h3 a::after {
+      content: " ↗";
+      font-size: 0.7em;
+      opacity: 0.5;
+    }
     .tool-card .score {
       font-size: 0.75rem;
       color: var(--accent);
@@ -125,16 +137,16 @@
       <h2>Tier S — Game Changers</h2>
       <p class="tier-desc">The tools that make mounted pods transformative.</p>
       <div class="tools-grid">
-        <div class="tool-card"><h3>Git <span class="score">100</span></h3><p>Version control your entire life</p></div>
-        <div class="tool-card"><h3>Obsidian <span class="score">99</span></h3><p>Second brain in your pod</p></div>
-        <div class="tool-card"><h3>Logseq <span class="score">99</span></h3><p>Outliner/journal, local-first</p></div>
-        <div class="tool-card"><h3>VS Code <span class="score">98</span></h3><p>Edit anything, Remote-SSH built in</p></div>
-        <div class="tool-card"><h3>rsync <span class="score">98</span></h3><p>Sync anything, delta transfers</p></div>
-        <div class="tool-card"><h3>Syncthing <span class="score">97</span></h3><p>P2P sync to all devices</p></div>
-        <div class="tool-card"><h3>rclone <span class="score">97</span></h3><p>Mount, sync, serve anywhere</p></div>
-        <div class="tool-card"><h3>Vim/Neovim <span class="score">96</span></h3><p>Edit at the speed of thought</p></div>
-        <div class="tool-card"><h3>pass <span class="score">96</span></h3><p>Passwords, GPG encrypted, Git synced</p></div>
-        <div class="tool-card"><h3>Borg Backup <span class="score">95</span></h3><p>Deduplicated, encrypted backups</p></div>
+        <div class="tool-card"><h3><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> <span class="score">100</span></h3><p>Version control your entire life</p></div>
+        <div class="tool-card"><h3><a href="https://obsidian.md/" target="_blank" rel="noopener">Obsidian</a> <span class="score">99</span></h3><p>Second brain in your pod</p></div>
+        <div class="tool-card"><h3><a href="https://logseq.com/" target="_blank" rel="noopener">Logseq</a> <span class="score">99</span></h3><p>Outliner/journal, local-first</p></div>
+        <div class="tool-card"><h3><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> <span class="score">98</span></h3><p>Edit anything, Remote-SSH built in</p></div>
+        <div class="tool-card"><h3><a href="https://rsync.samba.org/" target="_blank" rel="noopener">rsync</a> <span class="score">98</span></h3><p>Sync anything, delta transfers</p></div>
+        <div class="tool-card"><h3><a href="https://syncthing.net/" target="_blank" rel="noopener">Syncthing</a> <span class="score">97</span></h3><p>P2P sync to all devices</p></div>
+        <div class="tool-card"><h3><a href="https://rclone.org/" target="_blank" rel="noopener">rclone</a> <span class="score">97</span></h3><p>Mount, sync, serve anywhere</p></div>
+        <div class="tool-card"><h3><a href="https://neovim.io/" target="_blank" rel="noopener">Vim/Neovim</a> <span class="score">96</span></h3><p>Edit at the speed of thought</p></div>
+        <div class="tool-card"><h3><a href="https://www.passwordstore.org/" target="_blank" rel="noopener">pass</a> <span class="score">96</span></h3><p>Passwords, GPG encrypted, Git synced</p></div>
+        <div class="tool-card"><h3><a href="https://www.borgbackup.org/" target="_blank" rel="noopener">Borg Backup</a> <span class="score">95</span></h3><p>Deduplicated, encrypted backups</p></div>
       </div>
     </section>
 
