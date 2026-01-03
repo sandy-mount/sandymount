@@ -236,22 +236,24 @@
           <span class="step-time">30 seconds</span>
           <span class="step-layer d">D — Identity</span>
         </div>
-        <h2>1. Create Your Identity</h2>
+        <h2>1. Create Your Agent</h2>
         <p class="aha">"I exist on the decentralized web — no signup required."</p>
-        <p>Generate a Nostr keypair. This becomes your DID — a portable, self-sovereign identity that works across the entire SAND stack.</p>
+        <p>One command. You're an agent on the decentralized web with a cryptographic identity that works across the entire SAND stack.</p>
 
         <div class="step-code">
-          <span class="comment"># Install noskey</span><br>
-          <span class="command">npx noskey</span><br><br>
-          <span class="comment"># Output: your keys</span><br>
-          <span class="output">nsec1abc...xyz (private - keep secret!)</span><br>
-          <span class="output">npub1def...uvw (public - share freely)</span>
+          <span class="comment"># Create your agent identity</span><br>
+          <span class="command">npm init agent</span><br><br>
+          <span class="comment"># Output: your agent keys</span><br>
+          <span class="output">{</span><br>
+          <span class="output">  "nsec": "nsec1abc...xyz",  // private - keep secret!</span><br>
+          <span class="output">  "npub": "npub1def...uvw"   // public - share freely</span><br>
+          <span class="output">}</span>
         </div>
 
         <p>Your <code>npub</code> is your public identity. Your <code>nsec</code> is your private key — guard it like a password, but better: no one can reset it, and no one can take it away.</p>
 
         <div class="step-links">
-          <a href="https://github.com/melvincarvalho/noskey">Noskey CLI →</a>
+          <a href="https://github.com/melvincarvalho/create-agent">create-agent on GitHub →</a>
           <a href="https://nostrcg.github.io/did-nostr/">did:nostr Spec →</a>
         </div>
       </div>
@@ -274,8 +276,9 @@
         <p>Or use a web client — sign in with your nsec (or a browser extension like nos2x) and post. Your message propagates across relays worldwide in seconds.</p>
 
         <div class="step-links">
+          <a href="https://nostr.rocks/">nostr.rocks (web client) →</a>
           <a href="https://nostrcg.github.io/userguide/">Nostr User Guide →</a>
-          <a href="https://nostr.com/">Nostr Clients →</a>
+          <a href="https://nostr.com/">More Clients →</a>
         </div>
       </div>
 
@@ -291,7 +294,7 @@
 
         <div class="step-code">
           <span class="comment"># Option A: Use a provider</span><br>
-          <span class="command">→ solidcommunity.net (free pods)</span><br><br>
+          <span class="command">→ solidweb.org (free pods)</span><br><br>
           <span class="comment"># Option B: Self-host with JSS</span><br>
           <span class="command">npx jss init my-pod</span><br>
           <span class="command">npx jss start</span>
@@ -302,37 +305,44 @@
         <div class="step-links">
           <a href="https://solid-lite.org/">Solid Lite →</a>
           <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer">JSS Server →</a>
-          <a href="https://solidproject.org/users/get-a-pod">Get a Pod →</a>
+          <a href="https://solidweb.org/">solidweb.org →</a>
         </div>
       </div>
 
-      <!-- Step 4: Federation -->
+      <!-- Step 4: Rich Messaging -->
       <div class="step">
         <div class="step-header">
-          <span class="step-time">30 minutes</span>
-          <span class="step-layer a">A — Federated</span>
+          <span class="step-time">5 minutes</span>
+          <span class="step-layer s">S — Data/Web</span>
         </div>
-        <h2>4. Connect the Networks</h2>
-        <p class="aha">"I posted once, it's everywhere."</p>
-        <p>Bridge Nostr and ActivityPub with Ditto. Your content reaches both networks — Mastodon users and Nostr users see the same posts.</p>
+        <h2>4. Rich Messaging</h2>
+        <p class="aha">"My conversations, my pod, my history."</p>
+        <p>Solid Chat brings real-time messaging to your pod. Chat with anyone, keep your history. No company reads your messages — they're stored in YOUR data store.</p>
 
         <div class="step-code">
-          <span class="comment"># Deploy Ditto (bridges Nostr ↔ ActivityPub)</span><br>
-          <span class="command">→ docs.soapbox.pub/ditto/install/</span>
+          <span class="comment"># Open Solid Chat with your pod</span><br>
+          <span class="command">→ solid-chat.com</span><br><br>
+          <span class="comment"># Log in with your Solid pod</span><br>
+          <span class="output">Messages stored at: yourpod.solidweb.org/chat/</span>
         </div>
 
-        <p>Federation means no single network owns social. Post on Nostr, appear on Mastodon. Comment on Mastodon, appear on Nostr. One identity, many networks.</p>
+        <p>This is what the decentralized web looks like: real apps, real utility, YOUR data. Chat today, export tomorrow. No lock-in, ever.</p>
 
         <div class="step-links">
-          <a href="https://docs.soapbox.pub/ditto/install/">Ditto Install Guide →</a>
-          <a href="https://activitypub.rocks/">ActivityPub Spec →</a>
+          <a href="https://solid-chat.com/">Solid Chat →</a>
+          <a href="https://solid.github.io/chat/">Chat Specification →</a>
         </div>
       </div>
     </div>
 
     <section class="next-steps">
-      <h2>Keep Building</h2>
+      <h2>And So Much More...</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">This is just the beginning. The SAND stack is open — extend it, fork it, build on it. No ceilings. No gatekeepers.</p>
       <div class="next-grid">
+        <a href="https://docs.soapbox.pub/ditto/install/" class="next-card">
+          <h3>Ditto</h3>
+          <p>Bridge Nostr ↔ ActivityPub for federation</p>
+        </a>
         <a href="https://solid-lite.github.io/slips/" class="next-card">
           <h3>SLIPs</h3>
           <p>34+ modular specs for building on Solid</p>
@@ -340,10 +350,6 @@
         <a href="https://nostrcg.github.io/devguide/" class="next-card">
           <h3>Nostr Dev Guide</h3>
           <p>Build apps on the Nostr protocol</p>
-        </a>
-        <a href="https://socialdocs.org/" class="next-card">
-          <h3>SocialDocs</h3>
-          <p>ActivityPub and federation guides</p>
         </a>
         <a href="https://blocktrails.org/" class="next-card">
           <h3>BlockTrails</h3>
