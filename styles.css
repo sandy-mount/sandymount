@@ -87,6 +87,10 @@
   font-weight: 600;
   color: var(--text);
 }
+.layer-name.sand-s { color: var(--accent); }
+.layer-name.sand-a { color: var(--accent-cyan); }
+.layer-name.sand-n { color: var(--accent-orange); }
+.layer-name.sand-d { color: var(--accent-green); }
 .layer-role {
   font-size: 0.75rem;
   color: var(--text-muted);
