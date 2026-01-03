@@ -7,7 +7,7 @@
 
   <!-- Primary Meta Tags -->
   <meta name="title" content="Sandymount - The Open, Agentic, Decentralized Web">
-  <meta name="description" content="Sandymount unites 20+ projects across Solid, ActivityPub, Nostr, and beyond—forming one powerful, modular system where users own their data and agents serve their interests.">
+  <meta name="description" content="SAND is the stack for the decentralized web. Like LAMP was for open source, SAND (Solid, ActivityPub, Nostr, DID) provides four layers to build a web where users own their data.">
   <meta name="keywords" content="Solid, ActivityPub, Nostr, Ditto, decentralized web, SAND stack, linked data, agentic AI, data sovereignty">
   <meta name="author" content="Sandymount">
 
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sandy-mount.com/">
   <meta property="og:title" content="Sandymount - The Open, Agentic, Decentralized Web">
-  <meta property="og:description" content="One modular ecosystem uniting Solid, ActivityPub, Nostr, and beyond. Own your data. Control your agents.">
+  <meta property="og:description" content="LAMP built the open web. SAND builds the decentralized one. Four layers: Solid, ActivityPub, Nostr, DID.">
   <meta property="og:image" content="https://sandy-mount.com/og-image.png">
   <meta property="og:site_name" content="Sandymount">
 
@@ -23,7 +23,7 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://sandy-mount.com/">
   <meta property="twitter:title" content="Sandymount - The Open, Agentic, Decentralized Web">
-  <meta property="twitter:description" content="One modular ecosystem uniting Solid, ActivityPub, Nostr, and beyond. Own your data. Control your agents.">
+  <meta property="twitter:description" content="LAMP built the open web. SAND builds the decentralized one. Four layers: Solid, ActivityPub, Nostr, DID.">
   <meta property="twitter:image" content="https://sandy-mount.com/og-image.png">
 
   <!-- Favicon -->
@@ -31,14 +31,16 @@
 
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>.skip-link{position:absolute;top:-40px;left:0;background:#7c3aed;color:#fff;padding:8px 16px;z-index:9999;font-weight:600;border-radius:0 0 4px 0}.skip-link:focus{top:0}</style>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <a href="./" class="nav-logo">Sandymount</a>
     <div class="nav-links">
       <a href="#stack">Stack</a>
@@ -47,15 +49,15 @@
       <a href="./manifesto.html">Manifesto</a>
       <a href="https://github.com/sandy-mount">GitHub</a>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
     <a href="#stack" onclick="closeMenu()">Stack</a>
     <a href="#projects" onclick="closeMenu()">Projects</a>
     <a href="#architecture" onclick="closeMenu()">Architecture</a>
@@ -63,11 +65,12 @@
     <a href="https://github.com/sandy-mount" onclick="closeMenu()">GitHub</a>
   </div>
 
+  <main id="main">
   <header class="hero">
-    <div class="hero-badge">One Modular Ecosystem • Infinite Possibilities</div>
-    <h1>The Open, Agentic, Decentralized Web</h1>
-    <p class="hero-subtitle">Where data sovereignty meets intelligent agents.</p>
-    <p class="hero-desc">Sandymount unites 20+ projects across Solid, ActivityPub, Nostr, and beyond—forming one powerful, modular system where users own their data and agents serve their interests.</p>
+    <div class="hero-badge">SAND • The Stack for the Decentralized Web</div>
+    <h1>LAMP built the open web.<br>SAND builds the decentralized one.</h1>
+    <p class="hero-subtitle">Four layers. Complete stack. Own your data. Provably safe agents.</p>
+    <p class="hero-desc">Solid, ActivityPub, Nostr, and DID—the foundational technologies for a web where users own their data and agents serve their interests.</p>
     <div class="hero-buttons">
       <a href="https://solid-lite.org" class="btn btn-primary">Get Started</a>
       <a href="#projects" class="btn btn-secondary">Explore Projects</a>
@@ -78,9 +81,9 @@
   <!-- SAND Stack -->
   <section id="stack" class="section">
     <div class="section-header">
-      <div class="section-tag">Foundation</div>
-      <h2>The SAND Stack</h2>
-      <p>Four pillars of the open, decentralized web—working together as one.</p>
+      <div class="section-tag">The Stack</div>
+      <h2>SAND</h2>
+      <p>LAMP gave us Linux, Apache, MySQL, PHP. SAND gives us Solid, ActivityPub, Nostr, DID. Same idea, new era.</p>
     </div>
     <div class="sand-grid">
       <div class="sand-card sand-s">
@@ -103,9 +106,9 @@
       </div>
       <div class="sand-card sand-d">
         <div class="letter">D</div>
-        <h3>did:nostr</h3>
-        <p>Decentralized identity using Nostr keypairs. Self-sovereign, no registries, cryptographic proof.</p>
-        <a href="https://nostrcg.github.io/did-nostr/" class="link">nostrcg.github.io/did-nostr →</a>
+        <h3>DID</h3>
+        <p>Decentralized identity. Self-sovereign, portable, no registries. Best implemented with <a href="https://nostrcg.github.io/did-nostr/" class="link">did:nostr</a>.</p>
+        <a href="https://w3c.github.io/did-core/" class="link">w3c.github.io/did-core →</a>
       </div>
     </div>
   </section>
@@ -398,7 +401,7 @@
               <span class="status">Live</span>
             </div>
           </div>
-          <p>Bitcoin state anchoring with cryptographic key chains. Nostr-native state on Bitcoin.</p>
+          <p>Provably safe agents via Bitcoin state anchoring. Full audit trail. Trust through time.</p>
         </a>
         <a href="https://github.com/linkeddata/rdflib.js" class="project-card">
           <div class="project-top">
@@ -458,6 +461,7 @@
             <div class="arch-label">AI Agents</div>
             <div class="arch-boxes">
               <a href="https://modelcontextprotocol.io" class="arch-box">MCP</a>
+              <a href="https://blocktrails.org" class="arch-box">BlockTrails</a>
               <a href="https://agenticalliance.com" class="arch-box">Agentic Alliance</a>
             </div>
           </div>
@@ -466,7 +470,7 @@
             <div class="arch-boxes">
               <a href="https://solidos.github.io/mashlib/" class="arch-box cyan">SolidOS</a>
               <a href="https://socialdocs.org/docs/ecosystem/fedbox/" class="arch-box cyan">FedBox</a>
-              <a href="https://blocktrails.org" class="arch-box cyan">BlockTrails</a>
+              <a href="https://solid-chat.com" class="arch-box cyan">Solid Chat</a>
             </div>
           </div>
           <div class="arch-layer">
@@ -507,10 +511,6 @@
           <div class="label">SLIPs</div>
         </div>
         <div class="stat-item">
-          <div class="number">90%</div>
-          <div class="label">CTH Pass</div>
-        </div>
-        <div class="stat-item">
           <div class="number">4</div>
           <div class="label">Protocols</div>
         </div>
@@ -541,6 +541,7 @@
       <a href="./manifesto.html" class="btn btn-primary">Read the Full Manifesto</a>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -578,7 +579,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Sandymount — One modular ecosystem. Infinite possibilities.</p>
+      <p>Sandymount — Building on SAND, the stack for the decentralized web.</p>
     </div>
   </footer>
 
@@ -587,9 +588,10 @@
     function toggleMenu() {
       const hamburger = document.querySelector('.hamburger');
       const mobileMenu = document.getElementById('mobileMenu');
+      const isOpen = mobileMenu.classList.toggle('active');
       hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     }
 
     function closeMenu() {
@@ -597,6 +599,7 @@
       const mobileMenu = document.getElementById('mobileMenu');
       hamburger.classList.remove('active');
       mobileMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
 
