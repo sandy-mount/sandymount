@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with SAND - The Decentralized Web Stack</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Getting Started with SAND - The Decentralized Web Stack">
+  <meta name="description" content="Get a decentralized identity in 30 seconds. No email. No password. No company. Start building on the SAND stack.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sandy-mount.com/getting-started.html">
+  <meta property="og:title" content="Getting Started with SAND">
+  <meta property="og:description" content="Get a decentralized identity in 30 seconds. No email. No password. No company.">
+  <meta property="og:image" content="https://sandy-mount.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://sandy-mount.com/getting-started.html">
+  <meta property="twitter:title" content="Getting Started with SAND">
+  <meta property="twitter:description" content="Get a decentralized identity in 30 seconds. No email. No password. No company.">
+  <meta property="twitter:image" content="https://sandy-mount.com/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖️</text></svg>">
+
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .guide-header {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .guide-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .guide-header .hook {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .guide-header .subhook {
+      color: var(--text-muted);
+    }
+
+    .steps {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .step::before {
+      content: '';
+      position: absolute;
+      left: 2rem;
+      top: 100%;
+      width: 2px;
+      height: 2rem;
+      background: var(--border);
+    }
+    .step:last-child::before {
+      display: none;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .step-time {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+    .step-layer {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+    .step-layer.d { background: rgba(22, 163, 74, 0.1); color: var(--accent-green); }
+    .step-layer.n { background: rgba(234, 88, 12, 0.1); color: var(--accent-orange); }
+    .step-layer.s { background: rgba(124, 58, 237, 0.1); color: var(--accent); }
+    .step-layer.a { background: rgba(8, 145, 178, 0.1); color: var(--accent-cyan); }
+
+    .step h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .step .aha {
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .step p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .step-code {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    .step-code .comment { color: #6c7086; }
+    .step-code .command { color: #a6e3a1; }
+    .step-code .output { color: #89b4fa; }
+
+    .step-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .step-links a {
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .step-links a:hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .next-steps {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .next-steps h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .next-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .next-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .next-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .next-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="./" class="nav-logo">Sandymount</a>
+    <div class="nav-links">
+      <a href="./#stack">Stack</a>
+      <a href="./#projects">Projects</a>
+      <a href="./getting-started.html" class="active">Get Started</a>
+      <a href="./manifesto.html">Manifesto</a>
+      <a href="https://github.com/sandy-mount">GitHub</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="./#stack" onclick="closeMenu()">Stack</a>
+    <a href="./#projects" onclick="closeMenu()">Projects</a>
+    <a href="./getting-started.html" onclick="closeMenu()">Get Started</a>
+    <a href="./manifesto.html" onclick="closeMenu()">Manifesto</a>
+    <a href="https://github.com/sandy-mount" onclick="closeMenu()">GitHub</a>
+  </div>
+
+  <main id="main">
+    <header class="guide-header">
+      <h1>Build on SAND</h1>
+      <p class="hook">Get a decentralized identity in 30 seconds.</p>
+      <p class="subhook">No email. No password. No company.</p>
+    </header>
+
+    <div class="steps">
+      <!-- Step 1: Identity -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-time">30 seconds</span>
+          <span class="step-layer d">D — Identity</span>
+        </div>
+        <h2>1. Create Your Identity</h2>
+        <p class="aha">"I exist on the decentralized web — no signup required."</p>
+        <p>Generate a Nostr keypair. This becomes your DID — a portable, self-sovereign identity that works across the entire SAND stack.</p>
+
+        <div class="step-code">
+          <span class="comment"># Install noskey</span><br>
+          <span class="command">npx noskey</span><br><br>
+          <span class="comment"># Output: your keys</span><br>
+          <span class="output">nsec1abc...xyz (private - keep secret!)</span><br>
+          <span class="output">npub1def...uvw (public - share freely)</span>
+        </div>
+
+        <p>Your <code>npub</code> is your public identity. Your <code>nsec</code> is your private key — guard it like a password, but better: no one can reset it, and no one can take it away.</p>
+
+        <div class="step-links">
+          <a href="https://github.com/melvincarvalho/noskey">Noskey CLI →</a>
+          <a href="https://nostrcg.github.io/did-nostr/">did:nostr Spec →</a>
+        </div>
+      </div>
+
+      <!-- Step 2: Messaging -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-time">2 minutes</span>
+          <span class="step-layer n">N — Realtime</span>
+        </div>
+        <h2>2. Send Your First Message</h2>
+        <p class="aha">"No account, no permission — it just worked."</p>
+        <p>Use your new identity to post to the Nostr network. Messages go to relays you choose, not company servers.</p>
+
+        <div class="step-code">
+          <span class="comment"># Post to Nostr (using any client)</span><br>
+          <span class="command">npx nostrcli post "Hello from the decentralized web!"</span>
+        </div>
+
+        <p>Or use a web client — sign in with your nsec (or a browser extension like nos2x) and post. Your message propagates across relays worldwide in seconds.</p>
+
+        <div class="step-links">
+          <a href="https://nostrcg.github.io/userguide/">Nostr User Guide →</a>
+          <a href="https://nostr.com/">Nostr Clients →</a>
+        </div>
+      </div>
+
+      <!-- Step 3: Data -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-time">10 minutes</span>
+          <span class="step-layer s">S — Data/Web</span>
+        </div>
+        <h2>3. Own Your Data</h2>
+        <p class="aha">"My data, my URL, my rules."</p>
+        <p>Set up a Solid pod — your personal data store on the web. Apps request access; you decide what to share.</p>
+
+        <div class="step-code">
+          <span class="comment"># Option A: Use a provider</span><br>
+          <span class="command">→ solidcommunity.net (free pods)</span><br><br>
+          <span class="comment"># Option B: Self-host with JSS</span><br>
+          <span class="command">npx jss init my-pod</span><br>
+          <span class="command">npx jss start</span>
+        </div>
+
+        <p>Your pod is a web server you control. Store anything — notes, contacts, photos. Access it from any Solid-compatible app.</p>
+
+        <div class="step-links">
+          <a href="https://solid-lite.org/">Solid Lite →</a>
+          <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer">JSS Server →</a>
+          <a href="https://solidproject.org/users/get-a-pod">Get a Pod →</a>
+        </div>
+      </div>
+
+      <!-- Step 4: Federation -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-time">30 minutes</span>
+          <span class="step-layer a">A — Federated</span>
+        </div>
+        <h2>4. Connect the Networks</h2>
+        <p class="aha">"I posted once, it's everywhere."</p>
+        <p>Bridge Nostr and ActivityPub with Ditto. Your content reaches both networks — Mastodon users and Nostr users see the same posts.</p>
+
+        <div class="step-code">
+          <span class="comment"># Deploy Ditto (bridges Nostr ↔ ActivityPub)</span><br>
+          <span class="command">→ docs.soapbox.pub/ditto/install/</span>
+        </div>
+
+        <p>Federation means no single network owns social. Post on Nostr, appear on Mastodon. Comment on Mastodon, appear on Nostr. One identity, many networks.</p>
+
+        <div class="step-links">
+          <a href="https://docs.soapbox.pub/ditto/install/">Ditto Install Guide →</a>
+          <a href="https://activitypub.rocks/">ActivityPub Spec →</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="next-steps">
+      <h2>Keep Building</h2>
+      <div class="next-grid">
+        <a href="https://solid-lite.github.io/slips/" class="next-card">
+          <h3>SLIPs</h3>
+          <p>34+ modular specs for building on Solid</p>
+        </a>
+        <a href="https://nostrcg.github.io/devguide/" class="next-card">
+          <h3>Nostr Dev Guide</h3>
+          <p>Build apps on the Nostr protocol</p>
+        </a>
+        <a href="https://socialdocs.org/" class="next-card">
+          <h3>SocialDocs</h3>
+          <p>ActivityPub and federation guides</p>
+        </a>
+        <a href="https://blocktrails.org/" class="next-card">
+          <h3>BlockTrails</h3>
+          <p>Provably safe agents with audit trails</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Sandymount</div>
+        <p>Building on SAND, the stack for the decentralized web.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Stack</h4>
+        <a href="https://solidproject.org">Solid</a>
+        <a href="https://activitypub.rocks">ActivityPub</a>
+        <a href="https://nostr.com">Nostr</a>
+        <a href="https://nostrcg.github.io/did-nostr/">DID</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="./getting-started.html">Get Started</a>
+        <a href="./manifesto.html">Manifesto</a>
+        <a href="https://socialdocs.org">SocialDocs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://github.com/sandy-mount">GitHub</a>
+        <a href="./">Home</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Sandymount — Building on SAND, the stack for the decentralized web.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const isOpen = mobileMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>
