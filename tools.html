@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100+ Tools That Just Work - Sandymount</title>
+
+  <meta name="description" content="Mount your Solid pod. 100+ tools work instantly. No plugins. No integrations. The filesystem is the universal API.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖️</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .tools-header {
+      text-align: center;
+      padding: 4rem 1.5rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .tools-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .tools-header .tagline {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .tools-header .subtagline {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .tools-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .tools-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tools-section .tier-desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .tool-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      transition: all 0.2s;
+    }
+    .tool-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .tool-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tool-card .score {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .tool-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .bottom-line {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .bottom-line blockquote {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .bottom-line p {
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="./" class="nav-logo">Sandymount</a>
+    <div class="nav-links">
+      <a href="./#stack">Stack</a>
+      <a href="./getting-started.html">Get Started</a>
+      <a href="./manifesto.html">Manifesto</a>
+      <a href="https://github.com/sandy-mount">GitHub</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="tools-header">
+      <h1>100+ Tools That Just Work</h1>
+      <p class="tagline">Mount your pod. Use your tools. No plugins required.</p>
+      <p class="subtagline">The filesystem is the universal API.</p>
+    </header>
+
+    <section class="tools-section">
+      <h2>Tier S — Game Changers</h2>
+      <p class="tier-desc">The tools that make mounted pods transformative.</p>
+      <div class="tools-grid">
+        <div class="tool-card"><h3>Git <span class="score">100</span></h3><p>Version control your entire life</p></div>
+        <div class="tool-card"><h3>Obsidian <span class="score">99</span></h3><p>Second brain in your pod</p></div>
+        <div class="tool-card"><h3>Logseq <span class="score">99</span></h3><p>Outliner/journal, local-first</p></div>
+        <div class="tool-card"><h3>VS Code <span class="score">98</span></h3><p>Edit anything, Remote-SSH built in</p></div>
+        <div class="tool-card"><h3>rsync <span class="score">98</span></h3><p>Sync anything, delta transfers</p></div>
+        <div class="tool-card"><h3>Syncthing <span class="score">97</span></h3><p>P2P sync to all devices</p></div>
+        <div class="tool-card"><h3>rclone <span class="score">97</span></h3><p>Mount, sync, serve anywhere</p></div>
+        <div class="tool-card"><h3>Vim/Neovim <span class="score">96</span></h3><p>Edit at the speed of thought</p></div>
+        <div class="tool-card"><h3>pass <span class="score">96</span></h3><p>Passwords, GPG encrypted, Git synced</p></div>
+        <div class="tool-card"><h3>Borg Backup <span class="score">95</span></h3><p>Deduplicated, encrypted backups</p></div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>Tier A — Essential</h2>
+      <p class="tier-desc">Power tools for serious work.</p>
+      <div class="tools-grid">
+        <div class="tool-card"><h3>Emacs/Org-mode <span class="score">94</span></h3><p>Life in plain text</p></div>
+        <div class="tool-card"><h3>Pandoc <span class="score">94</span></h3><p>Convert anything to anything</p></div>
+        <div class="tool-card"><h3>Hugo <span class="score">93</span></h3><p>Blog from your pod</p></div>
+        <div class="tool-card"><h3>Calibre <span class="score">93</span></h3><p>Ebook library management</p></div>
+        <div class="tool-card"><h3>ffmpeg <span class="score">93</span></h3><p>Process all your media</p></div>
+        <div class="tool-card"><h3>ImageMagick <span class="score">92</span></h3><p>Batch image processing</p></div>
+        <div class="tool-card"><h3>Restic <span class="score">92</span></h3><p>Modern encrypted backups</p></div>
+        <div class="tool-card"><h3>Zotero <span class="score">92</span></h3><p>Research library</p></div>
+        <div class="tool-card"><h3>Joplin <span class="score">91</span></h3><p>Notes with sync</p></div>
+        <div class="tool-card"><h3>Taskwarrior <span class="score">91</span></h3><p>CLI task management</p></div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>Tier B — Power Tools</h2>
+      <p class="tier-desc">Creative and media tools.</p>
+      <div class="tools-grid">
+        <div class="tool-card"><h3>Darktable <span class="score">89</span></h3><p>RAW photo editing</p></div>
+        <div class="tool-card"><h3>GIMP <span class="score">89</span></h3><p>Image editing</p></div>
+        <div class="tool-card"><h3>Inkscape <span class="score">88</span></h3><p>Vector graphics</p></div>
+        <div class="tool-card"><h3>LibreOffice <span class="score">88</span></h3><p>Full office suite</p></div>
+        <div class="tool-card"><h3>Kodi <span class="score">88</span></h3><p>Media center</p></div>
+        <div class="tool-card"><h3>Jellyfin <span class="score">88</span></h3><p>Self-hosted streaming</p></div>
+        <div class="tool-card"><h3>mpv <span class="score">87</span></h3><p>Best video player</p></div>
+        <div class="tool-card"><h3>VLC <span class="score">87</span></h3><p>Plays anything</p></div>
+        <div class="tool-card"><h3>digiKam <span class="score">87</span></h3><p>Photo management</p></div>
+        <div class="tool-card"><h3>Kdenlive <span class="score">86</span></h3><p>Video editing</p></div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>Tier C — CLI Essentials</h2>
+      <p class="tier-desc">Command line power.</p>
+      <div class="tools-grid">
+        <div class="tool-card"><h3>ranger <span class="score">84</span></h3><p>TUI file manager</p></div>
+        <div class="tool-card"><h3>nnn <span class="score">84</span></h3><p>Blazing fast file manager</p></div>
+        <div class="tool-card"><h3>fd <span class="score">83</span></h3><p>Modern find</p></div>
+        <div class="tool-card"><h3>ripgrep <span class="score">83</span></h3><p>Fastest grep</p></div>
+        <div class="tool-card"><h3>fzf <span class="score">83</span></h3><p>Fuzzy finder</p></div>
+        <div class="tool-card"><h3>bat <span class="score">82</span></h3><p>Better cat</p></div>
+        <div class="tool-card"><h3>SQLite <span class="score">82</span></h3><p>Database in a file</p></div>
+        <div class="tool-card"><h3>DuckDB <span class="score">82</span></h3><p>Analytics on files</p></div>
+        <div class="tool-card"><h3>jq <span class="score">81</span></h3><p>JSON processing</p></div>
+        <div class="tool-card"><h3>Cryptomator <span class="score">81</span></h3><p>Encrypt folders</p></div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2>Tier D — Specialized</h2>
+      <p class="tier-desc">Domain-specific tools.</p>
+      <div class="tools-grid">
+        <div class="tool-card"><h3>tar/zip <span class="score">79</span></h3><p>Archive everything</p></div>
+        <div class="tool-card"><h3>GPG/age <span class="score">78</span></h3><p>Encryption</p></div>
+        <div class="tool-card"><h3>Zettlr <span class="score">78</span></h3><p>Academic markdown</p></div>
+        <div class="tool-card"><h3>Plex <span class="score">74</span></h3><p>Media streaming</p></div>
+        <div class="tool-card"><h3>Photoprism <span class="score">74</span></h3><p>AI photo management</p></div>
+        <div class="tool-card"><h3>Paperless-ngx <span class="score">74</span></h3><p>Document management</p></div>
+        <div class="tool-card"><h3>LaTeX <span class="score">72</span></h3><p>Academic typesetting</p></div>
+        <div class="tool-card"><h3>ledger/hledger <span class="score">69</span></h3><p>Plaintext accounting</p></div>
+        <div class="tool-card"><h3>chezmoi <span class="score">68</span></h3><p>Dotfile management</p></div>
+        <div class="tool-card"><h3>Jupyter <span class="score">62</span></h3><p>Notebooks in your pod</p></div>
+      </div>
+    </section>
+
+    <section class="bottom-line">
+      <blockquote>"You don't need new tools. Your tools already work."</blockquote>
+      <p>Mount your pod. Everything else follows.</p>
+      <a href="./getting-started.html" class="btn btn-primary" style="margin-top: 1.5rem;">Get Started</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>Sandymount — Building on SAND, the stack for the decentralized web.</p>
+    </div>
+  </footer>
+</body>
+</html>
