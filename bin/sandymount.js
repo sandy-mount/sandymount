@@ -13,6 +13,7 @@
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { existsSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,16 +21,28 @@ const __dirname = dirname(__filename);
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.6';
+const VERSION = '0.0.7';
 const DEFAULT_PORT = 5420;
 
-function showHelp() {
+function showBanner() {
   console.log(`
-🏖️  Sandymount v${VERSION}
+  ███████╗ █████╗ ███╗   ██╗██████╗
+  ██╔════╝██╔══██╗████╗  ██║██╔══██╗
+  ███████╗███████║██╔██╗ ██║██║  ██║
+  ╚════██║██╔══██║██║╚██╗██║██║  ██║
+  ███████║██║  ██║██║ ╚████║██████╔╝
+  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝
 
-SAND Stack: Solid + ActivityPub + Nostr + DID
+  🏖️  Sandymount v${VERSION}
 
-Usage:
+  The SAND Stack: Solid + ActivityPub + Nostr + DID
+  Your data. Your identity. Your rules.
+`);
+}
+
+function showHelp() {
+  showBanner();
+  console.log(`Usage:
   sandymount [options]    Start the server (default)
   sandymount help         Show this help
   sandymount version      Show version
@@ -40,13 +53,13 @@ Options:
   --no-nostr          Disable Nostr relay
   --no-git            Disable Git HTTP backend
   --idp               Enable identity provider
+  --activitypub       Enable ActivityPub federation
   --quiet             Suppress logs
 
 Examples:
   npx sandymount
-  sandymount
   sandymount --port 3000
-  sand --idp
+  sandymount --activitypub --idp
 
 Website: https://sandy-mount.com
 `);
@@ -54,6 +67,25 @@ Website: https://sandy-mount.com
 
 function showVersion() {
   console.log(`sandymount v${VERSION}`);
+}
+
+function findJss() {
+  // Try multiple locations for jss binary
+  const locations = [
+    // When installed as dependency (nested node_modules)
+    join(__dirname, '..', 'node_modules', '.bin', 'jss'),
+    // When using npx (hoisted node_modules)
+    join(__dirname, '..', '..', '.bin', 'jss'),
+    // Alternative hoisted location
+    join(__dirname, '..', '..', 'javascript-solid-server', 'bin', 'jss.js'),
+  ];
+
+  for (const loc of locations) {
+    if (existsSync(loc)) {
+      return loc;
+    }
+  }
+  return null;
 }
 
 function startServer(startArgs) {
@@ -75,24 +107,31 @@ function startServer(startArgs) {
   // Pass through all other args
   jssArgs.push(...startArgs);
 
-  console.log('');
-  console.log('🏖️  Starting Sandymount...');
+  showBanner();
+
+  console.log(`  Starting server on port ${startArgs.includes('--port') ? startArgs[startArgs.indexOf('--port') + 1] : DEFAULT_PORT}...`);
+  console.log(`  Data directory: ${startArgs.includes('--root') ? startArgs[startArgs.indexOf('--root') + 1] : './data'}`);
   console.log('');
 
-  // Find jss binary - try local node_modules first, then global
-  const localJss = join(__dirname, '..', 'node_modules', '.bin', 'jss');
-  const jss = spawn(localJss, jssArgs, { stdio: 'inherit' });
+  // Find jss binary
+  const jssPath = findJss();
+
+  if (!jssPath) {
+    console.error('  ❌ Error: JSS (JavaScript Solid Server) not found.');
+    console.error('');
+    console.error('  This usually means dependencies were not installed correctly.');
+    console.error('  Try installing globally instead:');
+    console.error('');
+    console.error('    npm install -g sandymount');
+    console.error('    sandymount');
+    console.error('');
+    process.exit(1);
+  }
+
+  const jss = spawn(jssPath, jssArgs, { stdio: 'inherit' });
 
   jss.on('error', (err) => {
-    if (err.code === 'ENOENT') {
-      console.error('Error: JSS not found.');
-      console.error('');
-      console.error('JSS should be installed as a dependency. Try:');
-      console.error('  npm install -g sandymount');
-      console.error('');
-    } else {
-      console.error('Error:', err.message);
-    }
+    console.error('  ❌ Error:', err.message);
     process.exit(1);
   });
 
