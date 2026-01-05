@@ -6,18 +6,17 @@
  * SAND Stack: Solid + ActivityPub + Nostr + DID
  *
  * Usage:
- *   sandymount start [options]   Start the SAND server
- *   sandymount help              Show help
+ *   sandymount [options]   Start the SAND server (default)
+ *   sandymount help        Show help
  */
 
 import { spawn } from 'child_process';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
 
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.2';
+const VERSION = '0.0.3';
+const DEFAULT_PORT = 5420;
 
 function showHelp() {
   console.log(`
@@ -26,22 +25,23 @@ function showHelp() {
 SAND Stack: Solid + ActivityPub + Nostr + DID
 
 Usage:
-  sandymount start [options]   Start the server
-  sandymount help              Show this help
-  sandymount version           Show version
+  sandymount [options]    Start the server (default)
+  sandymount help         Show this help
+  sandymount version      Show version
 
-Start Options:
-  --port <n>          Port to listen on (default: 3000)
+Options:
+  --port <n>          Port to listen on (default: ${DEFAULT_PORT})
   --root <path>       Data directory (default: ./data)
-  --nostr             Enable Nostr relay
-  --git               Enable Git HTTP backend
+  --no-nostr          Disable Nostr relay
+  --no-git            Disable Git HTTP backend
   --idp               Enable identity provider
   --quiet             Suppress logs
 
 Examples:
-  sandymount start
-  sandymount start --port 8080 --nostr --git
-  sand start --nostr --git
+  npx sandymount
+  sandymount
+  sandymount --port 3000
+  sand --idp
 
 Website: https://sandy-mount.com
 `);
@@ -51,17 +51,24 @@ function showVersion() {
   console.log(`sandymount v${VERSION}`);
 }
 
-function startServer() {
-  // Pass through all arguments after 'start' to jss
-  const jssArgs = ['start', ...args.slice(1)];
+function startServer(startArgs) {
+  const jssArgs = ['start'];
 
-  // Add defaults if not specified
-  if (!args.includes('--nostr') && !args.includes('--no-nostr')) {
+  // Add default port if not specified
+  if (!startArgs.includes('--port') && !startArgs.includes('-p')) {
+    jssArgs.push('--port', String(DEFAULT_PORT));
+  }
+
+  // Add defaults: nostr and git ON unless disabled
+  if (!startArgs.includes('--nostr') && !startArgs.includes('--no-nostr')) {
     jssArgs.push('--nostr');
   }
-  if (!args.includes('--git') && !args.includes('--no-git')) {
+  if (!startArgs.includes('--git') && !startArgs.includes('--no-git')) {
     jssArgs.push('--git');
   }
+
+  // Pass through all other args
+  jssArgs.push(...startArgs);
 
   console.log('');
   console.log('🏖️  Starting Sandymount...');
@@ -87,22 +94,22 @@ function startServer() {
 
 // Main
 switch (command) {
-  case 'start':
-    startServer();
+  case 'help':
+  case '--help':
+  case '-h':
+    showHelp();
     break;
   case 'version':
   case '--version':
   case '-v':
     showVersion();
     break;
-  case 'help':
-  case '--help':
-  case '-h':
-  case undefined:
-    showHelp();
+  case 'start':
+    // Explicit start, pass args after 'start'
+    startServer(args.slice(1));
     break;
   default:
-    console.error(`Unknown command: ${command}`);
-    console.error('Run "sandymount help" for usage.');
-    process.exit(1);
+    // No command or unknown = start server, pass all args
+    startServer(args);
+    break;
 }
