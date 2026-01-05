@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.8';
+const VERSION = '0.0.9';
 const DEFAULT_PORT = 5420;
 
 function showBanner() {
@@ -118,12 +118,12 @@ function startServer(startArgs) {
   const idpEnabled = startArgs.includes('--idp');
 
   // Show SAND stack status
-  console.log('  ┌─────────────────────────────────────┐');
-  console.log('  │  S  Solid        ✓ enabled         │');
-  console.log(`  │  A  ActivityPub  ${apEnabled ? '✓ enabled         │' : '○ --activitypub   │'}`);
-  console.log(`  │  N  Nostr        ${nostrEnabled ? '✓ enabled         │' : '○ disabled        │'}`);
-  console.log(`  │  D  DID          ${idpEnabled ? '✓ enabled (IdP)   │' : '○ --idp           │'}`);
-  console.log('  └─────────────────────────────────────┘');
+  console.log('  ┌────────────────────────────────────┐');
+  console.log('  │  S  Solid        ✓ enabled        │');
+  console.log(`  │  A  ActivityPub  ${apEnabled ? '✓ enabled        │' : '○ --activitypub  │'}`);
+  console.log(`  │  N  Nostr        ${nostrEnabled ? '✓ enabled        │' : '○ disabled       │'}`);
+  console.log(`  │  D  DID          ${idpEnabled ? '✓ enabled (IdP)  │' : '○ --idp          │'}`);
+  console.log('  └────────────────────────────────────┘');
   console.log('');
   console.log(`  Port: ${port}  Data: ${dataDir}  Git: ${gitEnabled ? '✓' : '○'}`);
   console.log('');
