@@ -1,6 +1,6 @@
 {
   "name": "sandymount",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "SAND Stack: Solid + ActivityPub + Nostr + DID — Personal sovereignty in one command",
   "main": "index.js",
   "type": "module",
@@ -33,6 +33,6 @@
   },
   "homepage": "https://sandy-mount.com",
   "dependencies": {
-    "javascript-solid-server": "^0.0.68"
+    "javascript-solid-server": "^0.0.69"
   }
 }
