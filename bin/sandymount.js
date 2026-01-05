@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.12';
+const VERSION = '0.0.13';
 const DEFAULT_PORT = 5420;
 
 function showBanner() {
@@ -53,6 +53,7 @@ Options:
   --no-nostr          Disable Nostr relay
   --no-git            Disable Git HTTP backend
   --no-idp            Disable identity provider
+  --no-mashlib        Disable SolidOS data browser UI
   --activitypub       Enable ActivityPub federation
   --quiet             Suppress logs
 
@@ -96,7 +97,7 @@ function startServer(startArgs) {
     jssArgs.push('--port', String(DEFAULT_PORT));
   }
 
-  // Add defaults: nostr, git, and idp ON unless disabled
+  // Add defaults: nostr, git, idp, and mashlib-cdn ON unless disabled
   if (!startArgs.includes('--nostr') && !startArgs.includes('--no-nostr')) {
     jssArgs.push('--nostr');
   }
@@ -105,6 +106,9 @@ function startServer(startArgs) {
   }
   if (!startArgs.includes('--idp') && !startArgs.includes('--no-idp')) {
     jssArgs.push('--idp');
+  }
+  if (!startArgs.includes('--mashlib-cdn') && !startArgs.includes('--no-mashlib')) {
+    jssArgs.push('--mashlib-cdn');
   }
 
   // Pass through all other args
@@ -119,6 +123,7 @@ function startServer(startArgs) {
   const gitEnabled = !startArgs.includes('--no-git');
   const apEnabled = startArgs.includes('--activitypub');
   const idpEnabled = !startArgs.includes('--no-idp');
+  const mashlibEnabled = !startArgs.includes('--no-mashlib');
 
   // Show SAND stack status
   console.log('  ┌─────────────────────────────────────┐');
@@ -128,7 +133,7 @@ function startServer(startArgs) {
   console.log(`  │  D  DID          ${idpEnabled ? '✓ enabled (IdP)   │' : '○ --no-idp        │'}`);
   console.log('  └─────────────────────────────────────┘');
   console.log('');
-  console.log(`  Port: ${port}  Data: ${dataDir}  Git: ${gitEnabled ? '✓' : '○'}`);
+  console.log(`  Port: ${port}  Data: ${dataDir}  Git: ${gitEnabled ? '✓' : '○'}  UI: ${mashlibEnabled ? '✓' : '○'}`);
   console.log('');
 
   // Find jss binary
