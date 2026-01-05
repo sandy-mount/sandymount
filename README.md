@@ -1,85 +1,235 @@
-# Introducing Sandymount: Where Open Collaboration Meets Innovative Technology
+<div align="center">
 
-**Embark on a journey that unites the best of the open web and open-source communities to redefine collaborative creation.**
+# 🏖️ Sandymount
 
----
+## The SAND Stack
 
-## **What is Sandymount?**
+**S**olid · **A**ctivityPub · **N**ostr · **D**ID
 
-Sandymount is a visionary project that brings humans and intelligent systems together in a harmonious environment. By fusing strengths from open platforms like **Solid Project**, **Ditto**, **ActivityPub**, **Nostr**, and more, we're crafting a unified ecosystem where innovation and creativity flourish.
+*Personal sovereignty in one command*
 
----
+[![npm version](https://img.shields.io/npm/v/sandymount.svg)](https://www.npmjs.com/package/sandymount)
+[![License: AGPL](https://img.shields.io/badge/License-AGPL-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
 
-## **Why Sandymount?**
-
-- **Unified Open Systems**: We integrate cutting-edge open technologies to create a seamless, interconnected experience for all users.
-
-- **Bridging Humans and Technology**: Sandymount develops evolving specifications and protocols that serve as bridges, enabling effortless collaboration between people and intelligent agents.
-
-- **Enhanced Collaboration**: In our ecosystem, humans guide and inspire while advanced systems support and amplify our capabilities, fostering a new level of productivity.
-
-- **Safe and Supportive Innovation**: We're committed to responsible development, ensuring that technology serves humanity's best interests while promoting safety and security.
+[Quick Start](#quick-start) · [Features](#features) · [Why SAND?](#why-sand) · [Roadmap](#roadmap)
 
 ---
 
-## **Key Features**
+</div>
 
-### **Intelligent Collaboration**
+## Quick Start
 
-Experience a platform where interactions are enriched through smart support, making teamwork more intuitive and efficient.
+```bash
+npm install -g sandymount
+sandymount start
+```
 
-### **Adaptive Learning Systems**
-
-Our technology evolves with you, remembering past interactions to provide a more personalized and effective experience over time.
-
-### **Unified Social Platforms and Apps**
-
-Enjoy a cohesive network of social interactions and applications, interconnected to offer a richer and more engaging user experience.
-
-### **Evolving Specifications**
-
-Stay ahead with protocols that adapt and grow, ensuring seamless integration with future technologies and standards.
+**That's it.** Your personal SAND server is running.
 
 ---
 
-## **How Does It Work?**
+## What is SAND?
 
-- **Integrate Open Technologies**: By unifying platforms like Solid Project and ActivityPub, we create a cohesive ecosystem that benefits from collective innovation.
+Four protocols, one stack, total sovereignty:
 
-- **Develop Adaptive Protocols**: Our evolving specs act as bridges, allowing seamless communication between humans and intelligent systems.
-
-- **Foster Symbiotic Relationships**: Technology learns from human input while providing insights and support that enhance human potential.
-
----
-
-## **Get Involved**
-
-### **For Developers and Innovators**
-
-- **Contribute Code**: Help build the backbone of Sandymount by contributing to our open-source repositories.
-
-- **Propose Ideas**: Your innovative concepts can shape the future of collaborative technology.
-
-### **For Enthusiasts and Visionaries**
-
-- **Join the Community**: Engage with others who share your passion for technology and collaboration.
-
-- **Spread the Word**: Help us grow by sharing Sandymount with your network.
+| | Protocol | What You Get |
+|:---:|----------|--------------|
+| **S** | [Solid](https://solidproject.org/) | Personal data pod — files, profiles, apps |
+| **A** | [ActivityPub](https://activitypub.rocks/) | Federated social — Mastodon, Threads, WordPress |
+| **N** | [Nostr](https://nostr.com/) | Censorship-resistant social — relays, zaps, keys |
+| **D** | [DID](https://www.w3.org/TR/did-core/) | Decentralized identity — one key, every protocol |
 
 ---
 
-## **The Future is Collaborative**
+## Features
 
-Imagine a world where technology doesn't just serve us but works **with** us—a world where human creativity and technological innovation come together to create something truly extraordinary.
+### ✅ Available Now
 
-**That's the world Sandymount is building.**
+| Feature | Description |
+|---------|-------------|
+| **Solid Pod** | Full LDP server with WebID, Web Access Control, Solid-OIDC |
+| **Nostr Relay** | NIP-01 compliant, rate-limited, memory-efficient |
+| **Git Server** | Clone and push repos via HTTP with WebID auth |
+| **DID Resolution** | did:nostr → WebID, NIP-98 HTTP authentication |
+| **Mobile Ready** | Runs on Android/Termux, ~100MB RAM |
+
+### 🔜 Coming Soon
+
+| Feature | Description |
+|---------|-------------|
+| **ActivityPub** | Mastodon-compatible federation via FedBox |
+| **Unified Identity** | One keypair for Solid + AP + Nostr |
+| **P2P Connectivity** | No VPS required |
 
 ---
 
-## **Ready to Be Part of the Revolution?**
+## Installation
 
-**Together, we're not just building software—we're building the future.**
+### Any Platform
+
+```bash
+npm install -g sandymount
+sandymount start
+```
+
+### Android (Termux)
+
+```bash
+pkg install nodejs-lts
+npm install -g sandymount pm2
+pm2 start sandymount -- start
+pm2 save
+```
+
+### With Options
+
+```bash
+sandymount start --port 3000 --nostr --git
+```
 
 ---
 
-*Sandymount: Where open collaboration meets innovative technology, uniting humans and intelligent systems to build in harmony.*
+## Endpoints
+
+| Endpoint | Protocol | Description |
+|----------|----------|-------------|
+| `/` | Solid | Pod root, WebID profile |
+| `/relay` | Nostr | WebSocket relay (wss://) |
+| `/relay/info` | Nostr | NIP-11 relay metadata |
+| `/.git` | Git | Clone/push repositories |
+| `/.well-known/webfinger` | Discovery | WebFinger lookup |
+
+---
+
+## Why SAND?
+
+### The Problem
+
+| Your Life | Who Controls It |
+|-----------|-----------------|
+| Identity | Google, Apple, Facebook |
+| Files | Dropbox, iCloud, Drive |
+| Social | Twitter, Instagram, TikTok |
+| Followers | The platform |
+
+### The Solution
+
+| SAND Protocol | What It Fixes |
+|---------------|---------------|
+| **DID** | You own your identity |
+| **Solid** | You own your data |
+| **Nostr** | You own your voice |
+| **ActivityPub** | You own your social graph |
+
+### The Vision
+
+```
+Your phone = Your server
+Your key = Your identity
+Your pod = Your data
+Your relay = Your reach
+```
+
+**Zero to sovereignty in 60 seconds.**
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│                    SAND Stack                        │
+├────────────┬────────────┬────────────┬──────────────┤
+│   Solid    │ ActivityPub│   Nostr    │     DID      │
+│   (LDP)    │   (AP)     │  (NIP-01)  │ (did:nostr)  │
+├────────────┴────────────┴────────────┴──────────────┤
+│                   Fastify Server                     │
+├─────────────────────────────────────────────────────┤
+│                     Filesystem                       │
+└─────────────────────────────────────────────────────┘
+
+One port · One process · One identity
+```
+
+---
+
+## Roadmap
+
+### v0.0.x — Foundation ✅
+- [x] Solid pod (LDP, WAC, WebID)
+- [x] Nostr relay (NIP-01, NIP-11)
+- [x] Git HTTP backend
+- [x] DID resolution (did:nostr)
+- [x] Android/Termux support
+
+### v0.1.x — Federation
+- [ ] ActivityPub integration
+- [ ] Mastodon compatibility
+- [ ] WebID = AP Actor = Nostr pubkey
+
+### v0.2.x — Mobile
+- [ ] One-tap install app
+- [ ] Built-in relay service
+- [ ] P2P mode (no VPS)
+
+### v1.0 — Production
+- [ ] Clustering
+- [ ] Admin dashboard
+- [ ] Plugin system
+
+---
+
+## Configuration
+
+```bash
+# CLI
+sandymount start --port 3000 --nostr --git
+
+# Environment
+export SAND_PORT=3000
+export SAND_NOSTR=true
+export SAND_GIT=true
+```
+
+---
+
+## Resources
+
+| Resource | Link |
+|----------|------|
+| Website | [sandy-mount.com](https://sandy-mount.com) |
+| GitHub | [sandy-mount/sandymount](https://github.com/sandy-mount/sandymount) |
+| npm | [npmjs.com/package/sandymount](https://www.npmjs.com/package/sandymount) |
+| Solid | [solidproject.org](https://solidproject.org) |
+| Nostr | [nostr.com](https://nostr.com) |
+| ActivityPub | [activitypub.rocks](https://activitypub.rocks) |
+
+---
+
+## Contributing
+
+We welcome contributions in:
+- ActivityPub integration
+- Mobile app development
+- P2P connectivity
+- Documentation
+
+See [Issue #3](https://github.com/sandy-mount/sandymount/issues/3) for the SAND Stack roadmap.
+
+---
+
+## License
+
+**AGPL-3.0** — Free as in freedom.
+
+---
+
+<div align="center">
+
+**Sandymount** — *Because your data should be yours.*
+
+🏖️
+
+[sandy-mount.com](https://sandy-mount.com)
+
+</div>

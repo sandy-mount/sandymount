@@ -1,12 +1,38 @@
 {
   "name": "sandymount",
-  "version": "0.0.1",
-  "description": "sandymount",
+  "version": "0.0.2",
+  "description": "SAND Stack: Solid + ActivityPub + Nostr + DID — Personal sovereignty in one command",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "bin": {
+    "sandymount": "./bin/sandymount.js",
+    "sand": "./bin/sandymount.js"
   },
-  "keywords": [],
+  "scripts": {
+    "start": "node bin/sandymount.js start",
+    "test": "echo \"No tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandy-mount/sandymount.git"
+  },
+  "keywords": [
+    "solid",
+    "activitypub",
+    "nostr",
+    "did",
+    "decentralized",
+    "pod",
+    "fediverse",
+    "self-hosted"
+  ],
   "author": "",
-  "license": "AGPL"
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sandy-mount/sandymount/issues"
+  },
+  "homepage": "https://sandy-mount.com",
+  "dependencies": {
+    "javascript-solid-server": "^0.0.60"
+  }
 }
