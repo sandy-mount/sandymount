@@ -430,6 +430,40 @@ a:hover { color: var(--accent-cyan); }
   transform: translateY(-2px);
 }
 
+/* Quick Install */
+.quick-install {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeInUp 0.6s ease 0.5s forwards;
+  opacity: 0;
+}
+
+.quick-install code {
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-install code:hover {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.install-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 /* Section styling */
 .section {
   padding: 5rem 2rem;
