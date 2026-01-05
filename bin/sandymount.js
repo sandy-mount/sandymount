@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.7';
+const VERSION = '0.0.8';
 const DEFAULT_PORT = 5420;
 
 function showBanner() {
@@ -109,8 +109,23 @@ function startServer(startArgs) {
 
   showBanner();
 
-  console.log(`  Starting server on port ${startArgs.includes('--port') ? startArgs[startArgs.indexOf('--port') + 1] : DEFAULT_PORT}...`);
-  console.log(`  Data directory: ${startArgs.includes('--root') ? startArgs[startArgs.indexOf('--root') + 1] : './data'}`);
+  // Determine what's enabled
+  const port = startArgs.includes('--port') ? startArgs[startArgs.indexOf('--port') + 1] : DEFAULT_PORT;
+  const dataDir = startArgs.includes('--root') ? startArgs[startArgs.indexOf('--root') + 1] : './data';
+  const nostrEnabled = !startArgs.includes('--no-nostr');
+  const gitEnabled = !startArgs.includes('--no-git');
+  const apEnabled = startArgs.includes('--activitypub');
+  const idpEnabled = startArgs.includes('--idp');
+
+  // Show SAND stack status
+  console.log('  ┌─────────────────────────────────────┐');
+  console.log('  │  S  Solid        ✓ enabled         │');
+  console.log(`  │  A  ActivityPub  ${apEnabled ? '✓ enabled         │' : '○ --activitypub   │'}`);
+  console.log(`  │  N  Nostr        ${nostrEnabled ? '✓ enabled         │' : '○ disabled        │'}`);
+  console.log(`  │  D  DID          ${idpEnabled ? '✓ enabled (IdP)   │' : '○ --idp           │'}`);
+  console.log('  └─────────────────────────────────────┘');
+  console.log('');
+  console.log(`  Port: ${port}  Data: ${dataDir}  Git: ${gitEnabled ? '✓' : '○'}`);
   console.log('');
 
   // Find jss binary
