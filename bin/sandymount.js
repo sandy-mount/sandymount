@@ -11,11 +11,16 @@
  */
 
 import { spawn } from 'child_process';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.3';
+const VERSION = '0.0.6';
 const DEFAULT_PORT = 5420;
 
 function showHelp() {
@@ -74,7 +79,9 @@ function startServer(startArgs) {
   console.log('🏖️  Starting Sandymount...');
   console.log('');
 
-  const jss = spawn('jss', jssArgs, { stdio: 'inherit' });
+  // Find jss binary - try local node_modules first, then global
+  const localJss = join(__dirname, '..', 'node_modules', '.bin', 'jss');
+  const jss = spawn(localJss, jssArgs, { stdio: 'inherit' });
 
   jss.on('error', (err) => {
     if (err.code === 'ENOENT') {
