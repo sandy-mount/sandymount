@@ -1,6 +1,6 @@
 {
   "name": "sandymount",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "SAND Stack: Solid + ActivityPub + Nostr + DID — Personal sovereignty in one command",
   "main": "index.js",
   "type": "module",
