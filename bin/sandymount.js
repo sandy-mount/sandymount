@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.14';
+const VERSION = '0.0.15';
 const DEFAULT_PORT = 5420;
 
 function showBanner() {
