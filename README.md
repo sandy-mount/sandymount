@@ -87,6 +87,14 @@ pm2 save
 sandymount start --port 3000 --nostr --git
 ```
 
+### Modern UI (SolidOS UI)
+
+```bash
+sandymount start --solidos-ui
+```
+
+Uses a modern Nextcloud-style interface instead of the classic mashlib databrowser. Requires local mashlib and solidos-ui files. See [solidos-ui](https://github.com/solidos/solidos/tree/main/workspaces/solidos-ui) for setup.
+
 ---
 
 ## Endpoints
@@ -185,11 +193,26 @@ One port · One process · One identity
 # CLI
 sandymount start --port 3000 --nostr --git
 
+# Modern UI
+sandymount start --solidos-ui
+
 # Environment
 export SAND_PORT=3000
 export SAND_NOSTR=true
 export SAND_GIT=true
 ```
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `--port <n>` | Port to listen on | 5420 |
+| `--root <path>` | Data directory | ./data |
+| `--solidos-ui` | Modern Nextcloud-style UI | false |
+| `--no-nostr` | Disable Nostr relay | - |
+| `--no-git` | Disable Git backend | - |
+| `--no-idp` | Disable identity provider | - |
+| `--no-mashlib` | Disable UI entirely | - |
+| `--activitypub` | Enable ActivityPub | false |
+| `--quiet` | Suppress logs | false |
 
 ---
 
