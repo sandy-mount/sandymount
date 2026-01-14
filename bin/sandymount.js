@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 const args = process.argv.slice(2);
 const command = args[0];
 
-const VERSION = '0.0.16';
+const VERSION = '0.0.17';
 const DEFAULT_PORT = 5420;
 
 function showBanner() {
@@ -131,12 +131,12 @@ function startServer(startArgs) {
   const solidosUiEnabled = startArgs.includes('--solidos-ui');
 
   // Show SAND stack status
-  console.log('  ┌─────────────────────────────────────┐');
+  console.log('  ┌────────────────────────────────────┐');
   console.log('  │  S  Solid        ✓ enabled         │');
   console.log(`  │  A  ActivityPub  ${apEnabled ? '✓ enabled         │' : '○ --activitypub   │'}`);
   console.log(`  │  N  Nostr        ${nostrEnabled ? '✓ enabled         │' : '○ disabled        │'}`);
   console.log(`  │  D  DID          ${idpEnabled ? '✓ enabled (IdP)   │' : '○ --no-idp        │'}`);
-  console.log('  └─────────────────────────────────────┘');
+  console.log('  └────────────────────────────────────┘');
   console.log('');
   const uiLabel = solidosUiEnabled ? 'modern' : (mashlibEnabled ? 'classic' : '○');
   console.log(`  Port: ${port}  Data: ${dataDir}  Git: ${gitEnabled ? '✓' : '○'}  UI: ${uiLabel}`);
